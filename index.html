@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>¿Quién Quiere Ser Millonario?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="game-container">
+        <h1>¿QUIÉN QUIERE SER MILLONARIO?</h1>
+        <img id="gameLogoImage" src="https://placehold.co/300x100/000000/00FF00?text=%C2%BFT%C3%BA%3F"
+             alt="Imagen de billetes de dinero con el texto ¿Tú?" class="game-image"
+             onerror="this.onerror=null;this.src='https://placehold.co/300x100/000000/FFFFFF?text=Logo+del+Juego';">
+
+        <div class="game-area-with-ladder">
+            <div class="main-game-content">
+                <div class="lifelines">
+                    <button id="lifeline5050" class="lifeline-button">50:50</button>
+                    <button id="lifelineCall" class="lifeline-button">Llamada</button>
+                    <button id="lifelineAudience" class="lifeline-button">Público</button>
+                </div>
+
+                <div class="question-area">
+                    <p id="questionText" class="question-text">Cargando pregunta...</p>
+                    <div id="optionsGrid" class="options-grid">
+                        <button class="option-button" data-option="A">A) Opción A</button>
+                        <button class="option-button" data-option="B">B) Opción B</button>
+                        <button class="option-button" data-option="C">C) Opción C</button>
+                        <button class="option-button" data-option="D">D) Opción D</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prizeLadder" class="prize-ladder"></div>
+        </div>
+
+        <div class="control-buttons">
+            <button id="nextQuestionButton" class="control-button" style="display: none;">Siguiente Pregunta</button>
+            <button id="restartGameButton" class="control-button" style="display: none;">Reiniciar Juego</button>
+            <button id="startGameButton" class="control-button">Empezar Juego</button>
+        </div>
+    </div>
+
+    <!-- Mensaje General -->
+    <div id="messageBoxOverlay" class="message-box-overlay">
+        <div class="message-box">
+            <h2 id="messageBoxTitle"></h2>
+            <p id="messageBoxContent"></p>
+            <div id="messageBoxButtons" class="message-box-buttons"></div>
+        </div>
+    </div>
+
+    <!-- Nombre del Jugador -->
+    <div id="playerNameModalOverlay" class="message-box-overlay">
+        <div class="message-box">
+            <h2 id="playerNameBoxTitle">¡Bienvenido!</h2>
+            <p id="playerNameBoxContent">Por favor, introduce tu nombre para empezar a jugar:</p>
+            <input type="text" id="playerNameInput" class="player-name-input" placeholder="Tu nombre aquí..." maxlength="20" />
+            <div class="message-box-buttons">
+                <button id="submitPlayerNameButton" class="message-box-button confirm">Empezar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts en módulos separados -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
