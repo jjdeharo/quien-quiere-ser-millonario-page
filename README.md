@@ -151,7 +151,6 @@ Puedes:
 
 - **Verifica** que el archivo `questions.json` esté en la raíz del proyecto
 - **Comprueba** que el JSON sea válido usando un validador online
-- **Usa** un servidor web local en lugar de abrir el archivo directamente
 
 
 
