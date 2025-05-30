@@ -1,189 +1,669 @@
-// js/questions.js
-
-// Variable global para almacenar los metadatos del tema
-let currentThemeData = {
-    tema: "Preguntas Generales",
-    descripcion: "Banco de preguntas educativas",
-    autor: "",
-    fecha_creacion: "",
-    total_preguntas: 0
-};
-
-/**
- * Carga las preguntas desde el archivo JSON externo
- * @returns {Promise<Array>} Array de preguntas o array vacío en caso de error
- */
-export async function loadQuestions() {
-    try {
-        const response = await fetch('./questions.json');
-        
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status} - ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        
-        // Verificar si es el nuevo formato con tema o el formato legacy
-        if (data.preguntas && Array.isArray(data.preguntas)) {
-            // Nuevo formato con tema
-            currentThemeData = {
-                tema: data.tema || "Tema no especificado",
-                descripcion: data.descripcion || "",
-                autor: data.autor || "",
-                fecha_creacion: data.fecha_creacion || "",
-                total_preguntas: data.total_preguntas || data.preguntas.length
-            };
-            
-            const questions = data.preguntas;
-            
-            // Validar que tenga preguntas
-            if (questions.length === 0) {
-                throw new Error('El archivo questions.json no contiene preguntas');
-            }
-            
-            // Validar estructura básica de las preguntas
-            const isValidStructure = questions.every(q => 
-                q.question && 
-                q.options && 
-                q.correct && 
-                q.difficulty &&
-                typeof q.question === 'string' &&
-                typeof q.options === 'object' &&
-                typeof q.correct === 'string' &&
-                typeof q.difficulty === 'string'
-            );
-            
-            if (!isValidStructure) {
-                throw new Error('Algunas preguntas no tienen la estructura correcta');
-            }
-            
-            console.log(`✅ Cargadas ${questions.length} preguntas del tema: "${currentThemeData.tema}"`);
-            return questions;
-            
-        } else if (Array.isArray(data)) {
-            // Formato legacy (array directo de preguntas)
-            console.warn('⚠️ Usando formato legacy de questions.json. Considera actualizar al nuevo formato con tema.');
-            
-            currentThemeData = {
-                tema: "Preguntas Generales",
-                descripcion: "Banco de preguntas (formato legacy)",
-                autor: "",
-                fecha_creacion: "",
-                total_preguntas: data.length
-            };
-            
-            const questions = data;
-            
-            // Validar que tenga preguntas
-            if (questions.length === 0) {
-                throw new Error('El archivo questions.json está vacío');
-            }
-            
-            // Validar estructura básica de las preguntas
-            const isValidStructure = questions.every(q => 
-                q.question && 
-                q.options && 
-                q.correct && 
-                q.difficulty &&
-                typeof q.question === 'string' &&
-                typeof q.options === 'object' &&
-                typeof q.correct === 'string' &&
-                typeof q.difficulty === 'string'
-            );
-            
-            if (!isValidStructure) {
-                throw new Error('Algunas preguntas no tienen la estructura correcta');
-            }
-            
-            console.log(`✅ Cargadas ${questions.length} preguntas (formato legacy)`);
-            return questions;
-            
-        } else {
-            throw new Error('El archivo questions.json debe contener un array de preguntas o un objeto con la propiedad "preguntas"');
-        }
-        
-    } catch (error) {
-        console.error('❌ Error cargando preguntas:', error);
-        
-        // Mostrar mensaje más específico según el tipo de error
-        if (error.name === 'TypeError' && error.message.includes('fetch')) {
-            console.error('No se pudo acceder al archivo questions.json. Verifica que existe y está en la ruta correcta.');
-        }
-        
-        return [];
+{
+  "tema": "Derivadas de Funciones - Bachillerato",
+  "descripcion": "Preguntas sobre cálculo diferencial y derivadas para estudiantes de bachillerato",
+  "autor": "Generado con IA",
+  "fecha_creacion": "2025-05-30",
+  "total_preguntas": 60,
+  "preguntas": [
+    {
+      "question": "¿Cuál es la derivada de $f(x) = 5x$?",
+      "options": {
+        "A": "$5$",
+        "B": "$5x$",
+        "C": "$x$",
+        "D": "$0$"
+      },
+      "correct": "A",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^3$?",
+      "options": {
+        "A": "$x^2$",
+        "B": "$3x^2$",
+        "C": "$3x^3$",
+        "D": "$\\frac{x^4}{4}$"
+      },
+      "correct": "B",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = 7$?",
+      "options": {
+        "A": "$7$",
+        "B": "$7x$",
+        "C": "$0$",
+        "D": "$1$"
+      },
+      "correct": "C",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^2 + 3x$?",
+      "options": {
+        "A": "$2x + 3$",
+        "B": "$x^2 + 3$",
+        "C": "$2x + 3x$",
+        "D": "$x + 3$"
+      },
+      "correct": "A",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\frac{1}{x}$?",
+      "options": {
+        "A": "$\\frac{1}{x^2}$",
+        "B": "$-\\frac{1}{x^2}$",
+        "C": "$-\\frac{1}{x}$",
+        "D": "$\\frac{-2}{x^3}$"
+      },
+      "correct": "B",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x}$?",
+      "options": {
+        "A": "$\\frac{1}{\\sqrt{x}}$",
+        "B": "$\\frac{1}{2\\sqrt{x}}$",
+        "C": "$2\\sqrt{x}$",
+        "D": "$\\frac{2}{\\sqrt{x}}$"
+      },
+      "correct": "B",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = 4x^2 - 2x + 1$?",
+      "options": {
+        "A": "$8x - 2$",
+        "B": "$4x - 2$",
+        "C": "$8x - 1$",
+        "D": "$4x^2 - 2$"
+      },
+      "correct": "A",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^5$?",
+      "options": {
+        "A": "$x^4$",
+        "B": "$5x^4$",
+        "C": "$5x^5$",
+        "D": "$\\frac{x^6}{6}$"
+      },
+      "correct": "B",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = 3x^4$?",
+      "options": {
+        "A": "$12x^3$",
+        "B": "$3x^3$",
+        "C": "$12x^4$",
+        "D": "$4x^3$"
+      },
+      "correct": "A",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x - 5$?",
+      "options": {
+        "A": "$x$",
+        "B": "$1$",
+        "C": "$-5$",
+        "D": "$0$"
+      },
+      "correct": "B",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = 2x^3 + x^2$?",
+      "options": {
+        "A": "$6x^2 + 2x$",
+        "B": "$2x^2 + x$",
+        "C": "$6x^3 + 2x^2$",
+        "D": "$6x^2 + x$"
+      },
+      "correct": "A",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\frac{x^3}{3}$?",
+      "options": {
+        "A": "$x^2$",
+        "B": "$\\frac{x^2}{3}$",
+        "C": "$3x^2$",
+        "D": "$\\frac{x^4}{12}$"
+      },
+      "correct": "A",
+      "difficulty": "easy"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = (x + 1)(x - 2)$?",
+      "options": {
+        "A": "$2x - 1$",
+        "B": "$x - 1$",
+        "C": "$2x + 1$",
+        "D": "$x + 2$"
+      },
+      "correct": "A",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^2 \\cdot e^x$?",
+      "options": {
+        "A": "$2x \\cdot e^x$",
+        "B": "$x^2 \\cdot e^x + 2x \\cdot e^x$",
+        "C": "$x^2 \\cdot e^x$",
+        "D": "$2x + e^x$"
+      },
+      "correct": "B",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\sin(x)$?",
+      "options": {
+        "A": "$\\sin(x)$",
+        "B": "$-\\cos(x)$",
+        "C": "$\\cos(x)$",
+        "D": "$-\\sin(x)$"
+      },
+      "correct": "C",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\cos(x)$?",
+      "options": {
+        "A": "$\\sin(x)$",
+        "B": "$-\\sin(x)$",
+        "C": "$\\cos(x)$",
+        "D": "$-\\cos(x)$"
+      },
+      "correct": "B",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\frac{x}{x+1}$?",
+      "options": {
+        "A": "$\\frac{1}{(x+1)^2}$",
+        "B": "$\\frac{1}{x+1}$",
+        "C": "$\\frac{x}{(x+1)^2}$",
+        "D": "$\\frac{-x}{(x+1)^2}$"
+      },
+      "correct": "A",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = e^x$?",
+      "options": {
+        "A": "$e^x$",
+        "B": "$xe^{x-1}$",
+        "C": "$\\frac{e^x}{x}$",
+        "D": "$e^{x+1}$"
+      },
+      "correct": "A",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\ln(x)$?",
+      "options": {
+        "A": "$\\frac{1}{x}$",
+        "B": "$\\ln(x)$",
+        "C": "$x$",
+        "D": "$\\frac{\\ln(x)}{x}$"
+      },
+      "correct": "A",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = (2x + 1)^3$?",
+      "options": {
+        "A": "$3(2x + 1)^2$",
+        "B": "$6(2x + 1)^2$",
+        "C": "$3(2x + 1)^3$",
+        "D": "$6(2x + 1)^3$"
+      },
+      "correct": "B",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\tan(x)$?",
+      "options": {
+        "A": "$\\sec^2(x)$",
+        "B": "$\\cot(x)$",
+        "C": "$\\sin(x)\\cos(x)$",
+        "D": "$\\frac{1}{\\cos^2(x)}$"
+      },
+      "correct": "A",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^2 \\sin(x)$?",
+      "options": {
+        "A": "$2x \\sin(x) + x^2 \\cos(x)$",
+        "B": "$2x \\cos(x)$",
+        "C": "$x^2 \\cos(x)$",
+        "D": "$2x \\sin(x)$"
+      },
+      "correct": "A",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\frac{\\sin(x)}{x}$?",
+      "options": {
+        "A": "$\\frac{\\cos(x)}{x}$",
+        "B": "$\\frac{x\\cos(x) - \\sin(x)}{x^2}$",
+        "C": "$\\frac{\\cos(x) - \\sin(x)}{x}$",
+        "D": "$\\frac{\\sin(x) - x\\cos(x)}{x^2}$"
+      },
+      "correct": "B",
+      "difficulty": "medium"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = e^{2x}$?",
+      "options": {
+        "A": "$e^{2x}$",
+        "B": "$2e^{2x}$",
+        "C": "$2xe^{2x}$",
+        "D": "$e^{2x+1}$"
+      },
+      "correct": "B",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Si $x^2 + y^2 = 25$, ¿cuál es $\\frac{dy}{dx}$?",
+      "options": {
+        "A": "$-\\frac{x}{y}$",
+        "B": "$-\\frac{y}{x}$",
+        "C": "$\\frac{x}{y}$",
+        "D": "$\\frac{y}{x}$"
+      },
+      "correct": "A",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\sin(x^2)$?",
+      "options": {
+        "A": "$\\cos(x^2)$",
+        "B": "$2x\\cos(x^2)$",
+        "C": "$2x\\sin(x^2)$",
+        "D": "$x^2\\cos(x^2)$"
+      },
+      "correct": "B",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\ln(x^2 + 1)$?",
+      "options": {
+        "A": "$\\frac{1}{x^2 + 1}$",
+        "B": "$\\frac{2x}{x^2 + 1}$",
+        "C": "$\\frac{2x}{(x^2 + 1)^2}$",
+        "D": "$\\frac{x}{x^2 + 1}$"
+      },
+      "correct": "B",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^x$ (para $x > 0$)?",
+      "options": {
+        "A": "$x^{x-1}$",
+        "B": "$x^x(\\ln(x) + 1)$",
+        "C": "$x^x\\ln(x)$",
+        "D": "$xx^{x-1}$"
+      },
+      "correct": "B",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\arcsin(x)$?",
+      "options": {
+        "A": "$\\frac{1}{\\sqrt{1-x^2}}$",
+        "B": "$\\frac{1}{1+x^2}$",
+        "C": "$\\frac{-1}{\\sqrt{1-x^2}}$",
+        "D": "$\\sqrt{1-x^2}$"
+      },
+      "correct": "A",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = e^{\\sin(x)}$?",
+      "options": {
+        "A": "$e^{\\sin(x)}$",
+        "B": "$\\cos(x)e^{\\sin(x)}$",
+        "C": "$\\sin(x)e^{\\sin(x)}$",
+        "D": "$e^{\\cos(x)}$"
+      },
+      "correct": "B",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Si $xy + \\sin(y) = x$, ¿cuál es $\\frac{dy}{dx}$?",
+      "options": {
+        "A": "$\\frac{1-y}{x + \\cos(y)}$",
+        "B": "$\\frac{1+y}{x - \\cos(y)}$",
+        "C": "$\\frac{x-1}{y + \\cos(y)}$",
+        "D": "$\\frac{y-1}{x + \\cos(y)}$"
+      },
+      "correct": "A",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\frac{e^x}{x^2}$?",
+      "options": {
+        "A": "$\\frac{e^x(x-2)}{x^3}$",
+        "B": "$\\frac{e^x(x+2)}{x^3}$",
+        "C": "$\\frac{e^x}{2x}$",
+        "D": "$\\frac{e^x(2-x)}{x^3}$"
+      },
+      "correct": "A",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x^2 + 4}$?",
+      "options": {
+        "A": "$\\frac{x}{\\sqrt{x^2 + 4}}$",
+        "B": "$\\frac{2x}{\\sqrt{x^2 + 4}}$",
+        "C": "$\\frac{1}{\\sqrt{x^2 + 4}}$",
+        "D": "$\\frac{x}{2\\sqrt{x^2 + 4}}$"
+      },
+      "correct": "A",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\ln(\\sin(x))$?",
+      "options": {
+        "A": "$\\frac{1}{\\sin(x)}$",
+        "B": "$\\cot(x)$",
+        "C": "$\\frac{\\cos(x)}{\\sin(x)}$",
+        "D": "$\\tan(x)$"
+      },
+      "correct": "B",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = (\\sin(x))^{\\cos(x)}$ (para $\\sin(x) > 0$)?",
+      "options": {
+        "A": "$(\\sin(x))^{\\cos(x)}[\\cos(x)\\cot(x) - \\sin(x)\\ln(\\sin(x))]$",
+        "B": "$(\\sin(x))^{\\cos(x)}\\cos(x)\\cot(x)$",
+        "C": "$(\\sin(x))^{\\cos(x)}\\sin(x)\\ln(\\sin(x))$",
+        "D": "$\\cos(x)(\\sin(x))^{\\cos(x)-1}$"
+      },
+      "correct": "A",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\arctan(\\frac{x}{2})$?",
+      "options": {
+        "A": "$\\frac{1}{2(1+\\frac{x^2}{4})}$",
+        "B": "$\\frac{2}{4+x^2}$",
+        "C": "$\\frac{1}{4+x^2}$",
+        "D": "$\\frac{2}{1+x^2}$"
+      },
+      "correct": "B",
+      "difficulty": "hard"
+    },
+    {
+      "question": "¿Cuál es la segunda derivada de $f(x) = e^{x^2}$?",
+      "options": {
+        "A": "$2xe^{x^2}$",
+        "B": "$2e^{x^2} + 4x^2e^{x^2}$",
+        "C": "$4x^2e^{x^2}$",
+        "D": "$2e^{x^2}(1 + 2x^2)$"
+      },
+      "correct": "D",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Si $f(x) = \\int_0^{x^2} \\sin(t) dt$, ¿cuál es $f'(x)$?",
+      "options": {
+        "A": "$\\sin(x^2)$",
+        "B": "$2x\\sin(x^2)$",
+        "C": "$\\cos(x^2)$",
+        "D": "$2x\\cos(x^2)$"
+      },
+      "correct": "B",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = x^{\\sin(x)}$ (para $x > 0$)?",
+      "options": {
+        "A": "$x^{\\sin(x)}[\\frac{\\sin(x)}{x} + \\cos(x)\\ln(x)]$",
+        "B": "$\\sin(x)x^{\\sin(x)-1}$",
+        "C": "$x^{\\sin(x)}\\cos(x)\\ln(x)$",
+        "D": "$x^{\\sin(x)}\\sin(x)$"
+      },
+      "correct": "A",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Si $y = \\arcsin(\\frac{x}{a})$, ¿cuál es $\\frac{d^2y}{dx^2}$?",
+      "options": {
+        "A": "$\\frac{-x}{a^2(a^2-x^2)^{3/2}}$",
+        "B": "$\\frac{x}{a(a^2-x^2)^{3/2}}$",
+        "C": "$\\frac{-1}{a(a^2-x^2)^{3/2}}$",
+        "D": "$\\frac{-x}{a(a^2-x^2)^{3/2}}$"
+      },
+      "correct": "D",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Un objeto se mueve según la ecuación $s(t) = 2t^3 - 9t^2 + 12t$. ¿Cuál es su aceleración en $t = 2$?",
+      "options": {
+        "A": "$6$ m/s²",
+        "B": "$-6$ m/s²",
+        "C": "$12$ m/s²",
+        "D": "$0$ m/s²"
+      },
+      "correct": "A",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Si $f(x) = e^{g(x)}$ y $g'(x) = \\frac{1}{x}$, ¿cuál es $f''(x)$?",
+      "options": {
+        "A": "$e^{g(x)}(\\frac{1}{x^2} - \\frac{1}{x^2})$",
+        "B": "$e^{g(x)}(\\frac{1}{x^2} + \\frac{1}{x^2})$",
+        "C": "$e^{g(x)}(-\\frac{1}{x^2})$",
+        "D": "$e^{g(x)}(\\frac{1}{x^2} - \\frac{1}{x^2}) = 0$"
+      },
+      "correct": "C",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Para la función $f(x) = \\frac{\\ln(x)}{x}$, ¿en qué valor de $x$ se encuentra el máximo local?",
+      "options": {
+        "A": "$x = 1$",
+        "B": "$x = e$",
+        "C": "$x = \\frac{1}{e}$",
+        "D": "$x = 2$"
+      },
+      "correct": "B",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Si $f(x) = \\sqrt{1 + x^2}$, ¿cuál es $f'(0)$?",
+      "options": {
+        "A": "$1$",
+        "B": "$0$",
+        "C": "$\\frac{1}{2}$",
+        "D": "No existe"
+      },
+      "correct": "B",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\ln(x^2 + 2x + 5)$?",
+      "options": {
+        "A": "$\\frac{2x + 2}{x^2 + 2x + 5}$",
+        "B": "$\\frac{1}{x^2 + 2x + 5}$",
+        "C": "$\\frac{2x}{x^2 + 2x + 5}$",
+        "D": "$\\frac{x + 1}{x^2 + 2x + 5}$"
+      },
+      "correct": "A",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\int_x^{x^2} \\frac{\\sin(t)}{t} dt$?",
+      "options": {
+        "A": "$\\frac{\\sin(x^2)}{x^2} \\cdot 2x - \\frac{\\sin(x)}{x}$",
+        "B": "$\\frac{\\sin(x^2)}{x^2} + \\frac{\\sin(x)}{x}$",
+        "C": "$2x\\frac{\\sin(x^2)}{x^2} - \\frac{\\sin(x)}{x}$",
+        "D": "$\\frac{\\sin(x^2)}{x^2} - \\frac{\\sin(x)}{x}$"
+      },
+      "correct": "C",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "Un globo esférico se infla de manera que su radio aumenta a razón de 2 cm/s. ¿A qué velocidad aumenta el volumen cuando el radio es 6 cm?",
+      "options": {
+        "A": "$288\\pi$ cm³/s",
+        "B": "$144\\pi$ cm³/s",
+        "C": "$72\\pi$ cm³/s",
+        "D": "$432\\pi$ cm³/s"
+      },
+      "correct": "A",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "¿Cuál es la tercera derivada de $f(x) = \\frac{1}{1-x}$?",
+      "options": {
+        "A": "$\\frac{6}{(1-x)^4}$",
+        "B": "$\\frac{3!}{(1-x)^4}$",
+        "C": "$\\frac{2}{(1-x)^3}$",
+        "D": "$\\frac{6}{(1-x)^3}$"
+      },
+      "correct": "A",
+      "difficulty": "very-hard"
+    },
+    {
+      "question": "¿Cuál es la ecuación de la recta tangente a $f(x) = x^3 - 3x + 1$ en el punto $(2, 3)$?",
+      "options": {
+        "A": "$y = 9x - 15$",
+        "B": "$y = 9x - 18$",
+        "C": "$y = 9x - 21$",
+        "D": "$y = 3x - 3$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "Si $f(x) = x^4 - 4x^3 + 6x^2 - 4x + 1$, ¿cuántos puntos de inflexión tiene la función?",
+      "options": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$2$",
+        "D": "$3$"
+      },
+      "correct": "B",
+      "difficulty": "expert"
+    },
+    {
+      "question": "Para la función $f(x) = xe^{-x^2}$, ¿cuál es el valor máximo absoluto?",
+      "options": {
+        "A": "$\\frac{1}{\\sqrt{2e}}$",
+        "B": "$\\frac{1}{2\\sqrt{e}}$",
+        "C": "$\\frac{1}{\\sqrt{e}}$",
+        "D": "$\\frac{1}{2e}$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "Si $y = f(g(h(x)))$ donde $f'(u) = u^2$, $g'(v) = 2v$, $h'(x) = 3$, y $h(1) = 2$, $g(2) = 4$, ¿cuál es $\\frac{dy}{dx}$ en $x = 1$?",
+      "options": {
+        "A": "$192$",
+        "B": "$96$",
+        "C": "$384$",
+        "D": "$144$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\int_0^x \\frac{e^{t^2}}{t^2 + 1} dt$ usando el teorema fundamental del cálculo?",
+      "options": {
+        "A": "$\\frac{e^{x^2}}{x^2 + 1}$",
+        "B": "$e^{x^2}$",
+        "C": "$\\frac{1}{x^2 + 1}$",
+        "D": "$\\frac{2xe^{x^2}}{x^2 + 1}$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\frac{\\ln(x)}{x^2}$?",
+      "options": {
+        "A": "$\\frac{1 - 2\\ln(x)}{x^3}$",
+        "B": "$\\frac{2\\ln(x) - 1}{x^3}$",
+        "C": "$\\frac{1}{x^3}$",
+        "D": "$\\frac{-\\ln(x)}{x^3}$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "Una ventana tiene forma de rectángulo coronado por un semicírculo. Si el perímetro es 20 m, ¿cuáles son las dimensiones que maximizan el área? (Sea $x$ el ancho del rectángulo)",
+      "options": {
+        "A": "$x = \\frac{40}{4 + \\pi}$",
+        "B": "$x = \\frac{20}{4 + \\pi}$",
+        "C": "$x = \\frac{40}{2 + \\pi}$",
+        "D": "$x = \\frac{20}{2 + \\pi}$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "Para la función implícita $x^3 + y^3 = 3xy$, ¿cuál es la pendiente de la tangente en el punto $(\\frac{3}{2}, \\frac{3}{2})$?",
+      "options": {
+        "A": "$-1$",
+        "B": "$1$",
+        "C": "$0$",
+        "D": "Indefinida"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\cos^3(x)$?",
+      "options": {
+        "A": "$-3\\cos^2(x)\\sin(x)$",
+        "B": "$3\\cos^2(x)\\sin(x)$",
+        "C": "$-3\\cos^2(x)$",
+        "D": "$3\\sin^2(x)\\cos(x)$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = \\sin^2(3x)$?",
+      "options": {
+        "A": "$6\\sin(3x)\\cos(3x)$",
+        "B": "$2\\sin(3x)\\cos(3x)$",
+        "C": "$3\\sin(6x)$",
+        "D": "$6\\sin(6x)$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "¿Cuál es la derivada de $f(x) = e^{2x}\\sin(x)$?",
+      "options": {
+        "A": "$e^{2x}(2\\sin(x) + \\cos(x))$",
+        "B": "$2e^{2x}\\sin(x) + e^{2x}\\cos(x)$",
+        "C": "$e^{2x}(\\sin(x) + \\cos(x))$",
+        "D": "$2e^{2x}\\cos(x)$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
+    },
+    {
+      "question": "Si $h(x) = f(g(x))$ donde $f$ y $g$ son funciones diferenciables, y se sabe que $h'(2) = 6$, $f'(g(2)) = 3$, ¿cuál es $g'(2)$?",
+      "options": {
+        "A": "$2$",
+        "B": "$3$",
+        "C": "$6$",
+        "D": "$18$"
+      },
+      "correct": "A",
+      "difficulty": "expert"
     }
-}
-
-/**
- * Obtiene los metadatos del tema actual
- * @returns {Object} Objeto con información del tema
- */
-export function getCurrentThemeData() {
-    return currentThemeData;
-}
-
-/**
- * Función de respaldo con preguntas básicas en caso de error crítico
- * Se mantiene como fallback de emergencia
- */
-export function getFallbackQuestions() {
-    // Actualizar datos del tema para fallback
-    currentThemeData = {
-        tema: "Literatura Latinoamericana (Emergencia)",
-        descripcion: "Preguntas de respaldo en caso de error de carga",
-        autor: "Sistema",
-        fecha_creacion: new Date().toISOString().split('T')[0],
-        total_preguntas: 8
-    };
-    
-    return [
-        {
-            "question": "¿Quién escribió 'Cien años de soledad'?",
-            "options": { "A": "Julio Cortázar", "B": "Gabriel García Márquez", "C": "Mario Vargas Llosa", "D": "Carlos Fuentes" },
-            "correct": "B",
-            "difficulty": "easy"
-        },
-        {
-            "question": "¿De qué país era Gabriel García Márquez?",
-            "options": { "A": "México", "B": "Argentina", "C": "Colombia", "D": "Perú" },
-            "correct": "C",
-            "difficulty": "easy"
-        },
-        {
-            "question": "¿Quién es la autora de 'La casa de los espíritus'?",
-            "options": { "A": "Laura Esquivel", "B": "Elena Poniatowska", "C": "Isabel Allende", "D": "Rosario Castellanos" },
-            "correct": "C",
-            "difficulty": "easy"
-        },
-        {
-            "question": "¿Qué movimiento literario se asocia con el 'Boom Latinoamericano'?",
-            "options": { "A": "Modernismo", "B": "Realismo Mágico", "C": "Naturalismo", "D": "Romanticismo" },
-            "correct": "B",
-            "difficulty": "medium"
-        },
-        {
-            "question": "¿Cuál es la capital ficticia donde transcurre 'Cien años de soledad'?",
-            "options": { "A": "Santa María", "B": "Comala", "C": "Macondo", "D": "Aureliano" },
-            "correct": "C",
-            "difficulty": "medium"
-        },
-        {
-            "question": "¿Qué poeta chileno es el creador del antipoema?",
-            "options": { "A": "Pablo Neruda", "B": "Vicente Huidobro", "C": "Nicanor Parra", "D": "Gonzalo Rojas" },
-            "correct": "C",
-            "difficulty": "hard"
-        },
-        {
-            "question": "¿Qué novela de Elena Garro es precursora del realismo mágico?",
-            "options": { "A": "Los recuerdos del porvenir", "B": "Andarse por las ramas", "C": "Un hogar sólido", "D": "Reencuentro de personajes" },
-            "correct": "A",
-            "difficulty": "very-hard"
-        },
-        {
-            "question": "¿Qué concepto filosófico influyó significativamente en Jorge Luis Borges?",
-            "options": { "A": "Existencialismo", "B": "Positivismo", "C": "Idealismo y platonismo", "D": "Materialismo histórico" },
-            "correct": "C",
-            "difficulty": "expert"
-        }
-    ];
+  ]
 }
