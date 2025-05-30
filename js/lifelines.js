@@ -1,6 +1,6 @@
 // js/lifelines.js
 
-import { showMessageBox, showMessageBoxWithMath } from './helpers.js';
+import { showMessageBox } from './helpers.js';
 
 /**
  * Aplica la ayuda 50:50: desactiva dos opciones incorrectas.
@@ -29,11 +29,12 @@ export function applyCall(question) {
     const correctOption = question.correct;
     const correctText = question.options[correctOption];
     
-    // Usar la función especializada para mensajes con matemáticas
-    showMessageBoxWithMath(
+    // Usar showMessageBox con soporte LaTeX habilitado
+    showMessageBox(
         "Llamada a un Amigo",
         `Tu amigo dice: "Creo que la respuesta correcta es la opción ${correctOption}, ${correctText}."`,
-        [{ text: "Gracias", className: "confirm" }]
+        [{ text: "Gracias", className: "confirm" }],
+        true // Habilitar LaTeX
     );
 }
 
@@ -68,5 +69,5 @@ export function applyAudience(question) {
         message += `${opt}) ${question.options[opt]}: ${votes[opt]}%<br>`;
     });
 
-    showMessageBoxWithMath("Voto del Público", message, [{ text: "Entendido", className: "confirm" }]);
+    showMessageBox("Voto del Público", message, [{ text: "Entendido", className: "confirm" }], true);
 }
