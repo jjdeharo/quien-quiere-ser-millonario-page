@@ -1,5 +1,5 @@
 import { loadQuestions, getFallbackQuestions } from './questions.js';
-import { shuffleArray, showMessageBox, showMessageBoxWithMath } from './helpers.js';
+import { shuffleArray, showMessageBox } from './helpers.js';
 import {
     updatePrizeLadder,
     generatePrizeLadder,
@@ -148,11 +148,12 @@ function applyCall() {
     const q = questions[currentQuestionIndex];
     const correctText = q.options[q.correct];
     
-    // Usar la función especializada para mensajes con matemáticas
-    showMessageBoxWithMath(
+    // Usar la función con soporte LaTeX habilitado
+    showMessageBox(
         "Llamada", 
         `Tu amigo dice: "Creo que es ${q.correct}) ${correctText}."`, 
-        [{ text: "Gracias", className: "confirm" }]
+        [{ text: "Gracias", className: "confirm" }],
+        true // Habilitar LaTeX
     );
 }
 
@@ -187,7 +188,7 @@ function applyAudience() {
         summary += `${opt}) ${q.options[opt]}: ${votes[opt]}%<br>`;
     });
     
-    showMessageBoxWithMath("Voto del Público", summary, [{ text: "Ok", className: "confirm" }]);
+    showMessageBox("Voto del Público", summary, [{ text: "Ok", className: "confirm" }], true);
 }
 
 function startGame() {
@@ -277,10 +278,11 @@ function checkAnswer(selectedKey) {
     } else {
         // Mostrar la respuesta correcta con posible LaTeX
         const correctText = q.options[q.correct];
-        showMessageBoxWithMath(
+        showMessageBox(
             "¡Incorrecto!", 
             `La correcta era: ${q.correct}) ${correctText}`, 
-            [{ text: "Terminar", className: "cancel", onClick: () => endGame(false) }]
+            [{ text: "Terminar", className: "cancel", onClick: () => endGame(false) }],
+            true // Habilitar LaTeX
         );
     }
 }
