@@ -50,7 +50,7 @@ export function updateThemeDisplay() {
             themeDescription.style.display = 'none';
         }
         
-        // Mostrar el contenedor del tema
+        // Mostrar el contenedor del tema solo en la pantalla inicial
         themeElement.style.display = 'block';
         
         console.log(`🎯 Tema mostrado: "${themeData.tema}"`);
