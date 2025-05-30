@@ -108,20 +108,3 @@ export function askPlayerName(callback) {
         callback(name);
     };
 }
-
-/**
- * Función auxiliar para mostrar mensajes con soporte LaTeX
- * @param {string} title - Título del mensaje
- * @param {string} content - Contenido del mensaje (puede incluir LaTeX)
- * @param {Array} buttons - Botones del mensaje
- */
-export async function showMessageBoxWithLaTeX(title, content, buttons) {
-    showMessageBox(title, content, buttons);
-    
-    // Renderizar LaTeX en el contenido del mensaje después de mostrarlo
-    const messageContent = document.getElementById('messageBoxContent');
-    if (messageContent) {
-        messageContent.innerHTML = content;
-        await renderMathInElement(messageContent);
-    }
-}
