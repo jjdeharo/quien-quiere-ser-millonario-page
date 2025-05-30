@@ -63,29 +63,29 @@ export function updateThemeDisplay() {
 export function showThemeInfo() {
     const themeData = getCurrentThemeData();
     
-    let content = `<strong>Tema:</strong> ${themeData.tema}<br><br>`;
+    let content = `<strong>Tema:</strong> ${themeData.tema}`;
     
     if (themeData.descripcion) {
-        content += `<strong>Descripción:</strong> ${themeData.descripcion}<br><br>`;
+        content += `<br><br><strong>Descripción:</strong> ${themeData.descripcion}`;
     }
     
     if (themeData.total_preguntas) {
-        content += `<strong>Total de preguntas:</strong> ${themeData.total_preguntas}<br><br>`;
+        content += `<br><br><strong>Total de preguntas:</strong> ${themeData.total_preguntas}`;
     }
     
     if (themeData.autor) {
-        content += `<strong>Autor:</strong> ${themeData.autor}<br><br>`;
+        content += `<br><br><strong>Autor:</strong> ${themeData.autor}`;
     }
     
     if (themeData.fecha_creacion) {
-        content += `<strong>Fecha de creación:</strong> ${themeData.fecha_creacion}`;
+        content += `<br><br><strong>Fecha de creación:</strong> ${themeData.fecha_creacion}`;
     }
     
     showMessageBox(
         "Información del Tema",
         content,
         [{ text: "Cerrar", className: "confirm" }],
-        false // No renderizar LaTeX ya que es información del tema
+        true // Habilitar HTML para que se rendericen las etiquetas correctamente
     );
 }
 
