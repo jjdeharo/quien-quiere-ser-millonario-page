@@ -59,7 +59,7 @@ Para 60 preguntas totales:
 
 ## 🤖 Genera Preguntas con IA
 
-Usa este prompt completo con ChatGPT/Gemini:
+Usa este prompt completo con tu IA favorita:
 
 ```
 Quiero que generes un banco de preguntas y respuestas en formato JSON con tema. Cada pregunta debe tener las siguientes propiedades: question (la pregunta en sí), options (un objeto con 4 opciones de respuesta etiquetadas A, B, C, D), correct (la letra de la opción correcta), y difficulty (la dificultad de la pregunta).
@@ -110,60 +110,3 @@ Ejemplo del formato esperado:
 Por favor, comienza a generar el banco completo en formato JSON válido.
 ```
 
-## 📐 LaTeX Básico
-
-```latex
-Exponentes: x^2, x^{10}
-Fracciones: \frac{a}{b}
-Raíces: \sqrt{x}
-Funciones: \sin(x), \cos(x), \ln(x)
-Derivadas: \frac{dy}{dx}, f'(x)
-Integrales: \int f(x)dx
-Límites: \lim_{x \to 0} f(x)
-Letras griegas: \alpha, \beta, \pi
-```
-
-## 📂 Estructura de Archivos
-
-```
-├── index.html          # Página principal
-├── styles.css          # Estilos (con soporte para temas y LaTeX)
-├── questions.json      # ¡Tu archivo de preguntas!
-└── js/
-    ├── main.js         # Lógica principal del juego
-    ├── questions.js    # Carga de preguntas y temas
-    ├── ui.js           # Interfaz y renderizado LaTeX
-    ├── helpers.js      # Funciones auxiliares
-    └── lifelines.js    # Lógica de comodines
-```
-
-## 🔧 Compatibilidad
-
-- ✅ **Formato nuevo**: Con tema y metadatos (recomendado)
-- ✅ **Formato legacy**: Array directo de preguntas (compatible)
-
-## 🐛 Solución de Problemas
-
-**Las preguntas no cargan:**
-- Verifica que `questions.json` esté en la raíz del proyecto
-- Valida el JSON en [jsonlint.com](https://jsonlint.com)
-
-**LaTeX no se muestra:**
-- Verifica conexión a internet (MathJax se carga desde CDN)
-- Asegúrate de usar `$formula$` para fórmulas
-
-**El tema no aparece:**
-- Usa la nueva estructura con la propiedad `tema`
-- El formato legacy muestra "Preguntas Generales"
-
-## 🎯 Ejemplos de Temas
-
-- 📐 **Matemáticas**: "Derivadas de Funciones - Bachillerato"
-- 🔬 **Física**: "Mecánica Clásica - Cinemática"  
-- 🧪 **Química**: "Química Orgánica - Hidrocarburos"
-- 🌍 **Historia**: "Segunda Guerra Mundial"
-- 📚 **Literatura**: "Generación del 98"
-
----
-
-**¡Listo para crear tu quiz educativo personalizado!** 🎉
