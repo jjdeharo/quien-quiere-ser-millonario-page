@@ -19,7 +19,7 @@ Versión educativa personalizable del famoso juego **¿Quién Quiere Ser Millona
 - ✅ **3 comodines**: 50:50, Llamada, Público
 - ✅ **Responsive**: Funciona en móviles y tablets
 
-## Hacer una copia del programa
+## 📄➡️📄 Haz una copia del programa
 
 Haz un fork del repositorio: esto crea una copia del proyecto original en tu propia cuenta de GitHub. Así puedes hacer cambios sin afectar al original.
 
