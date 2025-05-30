@@ -1,368 +1,362 @@
 [
   {
-    "question": "¿Quién escribió la novela 'Cien años de soledad'?",
-    "options": { "A": "Julio Cortázar", "B": "Gabriel García Márquez", "C": "Mario Vargas Llosa", "D": "Carlos Fuentes" },
+    "question": "¿Cuál es la derivada de $f(x) = 3x^2$?",
+    "options": { "A": "$6x$", "B": "$3x$", "C": "$6x^2$", "D": "$9x$" },
+    "correct": "A",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = 5x^3$?",
+    "options": { "A": "$5x^2$", "B": "$15x^2$", "C": "$15x^3$", "D": "$5x^4$" },
     "correct": "B",
     "difficulty": "easy"
   },
   {
-    "question": "¿De qué país era Gabriel García Márquez?",
-    "options": { "A": "México", "B": "Argentina", "C": "Colombia", "D": "Perú" },
-    "correct": "C",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál de las siguientes obras es un cuento de Julio Cortázar?",
-    "options": { "A": "La ciudad y los perros", "B": "Rayuela", "C": "Bestiario", "D": "El Aleph" },
-    "correct": "C",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Qué movimiento literario se asocia con el 'Boom Latinoamericano'?",
-    "options": { "A": "Modernismo", "B": "Realismo Mágico", "C": "Naturalismo", "D": "Romanticismo" },
+    "question": "¿Cuál es la derivada de $f(x) = x^4$?",
+    "options": { "A": "$x^3$", "B": "$4x^3$", "C": "$4x^4$", "D": "$x^5$" },
     "correct": "B",
     "difficulty": "easy"
   },
   {
-    "question": "¿Quién es la autora de 'La casa de los espíritus'?",
-    "options": { "A": "Laura Esquivel", "B": "Elena Poniatowska", "C": "Isabel Allende", "D": "Rosario Castellanos" },
+    "question": "¿Cuál es la derivada de $f(x) = 7$?",
+    "options": { "A": "$7$", "B": "$7x$", "C": "$0$", "D": "$1$" },
     "correct": "C",
     "difficulty": "easy"
   },
   {
-    "question": "¿En qué país nació Jorge Luis Borges?",
-    "options": { "A": "Chile", "B": "Uruguay", "C": "Argentina", "D": "España" },
-    "correct": "C",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál de estos escritores ganó el Premio Nobel de Literatura?",
-    "options": { "A": "Carlos Fuentes", "B": "Julio Cortázar", "C": "Octavio Paz", "D": "José Donoso" },
-    "correct": "C",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Qué novela de Mario Vargas Llosa transcurre en un colegio militar?",
-    "options": { "A": "Conversación en La Catedral", "B": "La tía Julia y el escribidor", "C": "La ciudad y los perros", "D": "Lituma en los Andes" },
-    "correct": "C",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál es el nombre del protagonista de 'Pedro Páramo'?",
-    "options": { "A": "Juan Rulfo", "B": "Juan Preciado", "C": "Abundio", "D": "Miguel Páramo" },
+    "question": "¿Cuál es la derivada de $f(x) = x$?",
+    "options": { "A": "$0$", "B": "$1$", "C": "$x$", "D": "$2x$" },
     "correct": "B",
     "difficulty": "easy"
   },
   {
-    "question": "¿A qué género literario pertenece 'Ficciones' de Jorge Luis Borges?",
-    "options": { "A": "Novela", "B": "Ensayo", "C": "Poesía", "D": "Cuento" },
-    "correct": "D",
+    "question": "¿Cuál es la derivada de $f(x) = 2x + 5$?",
+    "options": { "A": "$2$", "B": "$2x$", "C": "$7$", "D": "$2x + 5$" },
+    "correct": "A",
     "difficulty": "easy"
   },
   {
-    "question": "¿Qué escritora mexicana es conocida por su obra 'Como agua para chocolate'?",
-    "options": { "A": "Rosario Castellanos", "B": "Elena Garro", "C": "Laura Esquivel", "D": "Margo Glantz" },
-    "correct": "C",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Quién es el autor de 'El túnel'?",
-    "options": { "A": "Adolfo Bioy Casares", "B": "Ernesto Sábato", "C": "Alejo Carpentier", "D": "Juan Carlos Onetti" },
+    "question": "¿Cuál es la derivada de $f(x) = x^2 + 3x$?",
+    "options": { "A": "$x + 3$", "B": "$2x + 3$", "C": "$x^2 + 3$", "D": "$2x^2 + 3x$" },
     "correct": "B",
     "difficulty": "easy"
   },
   {
-    "question": "¿Qué obra de Julio Cortázar es conocida por su estructura no lineal y múltiples lecturas?",
-    "options": { "A": "Bestiario", "B": "Las armas secretas", "C": "Rayuela", "D": "Historias de cronopios y de famas" },
-    "correct": "C",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Cuál de estas novelas de Mario Vargas Llosa se inspira en la dictadura de Rafael Leónidas Trujillo?",
-    "options": { "A": "La casa verde", "B": "El pez en el agua", "C": "La fiesta del Chivo", "D": "Los cachorros" },
-    "correct": "C",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Qué concepto introdujo Alejo Carpentier para describir una realidad maravillosa y a veces inverosímil propia de América Latina?",
-    "options": { "A": "Realismo Sucio", "B": "Real Maravilloso", "C": "Realismo Crítico", "D": "Fantástico" },
+    "question": "¿Cuál es la derivada de $f(x) = -4x^2$?",
+    "options": { "A": "$-4x$", "B": "$-8x$", "C": "$4x$", "D": "$-8x^2$" },
     "correct": "B",
-    "difficulty": "medium"
+    "difficulty": "easy"
   },
   {
-    "question": "¿Cuál es la capital ficticia donde transcurre gran parte de la obra de Gabriel García Márquez, incluyendo 'Cien años de soledad'?",
-    "options": { "A": "Santa María", "B": "Comala", "C": "Macondo", "D": "Aureliano" },
-    "correct": "C",
-    "difficulty": "medium"
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{1}{2}x^2$?",
+    "options": { "A": "$x$", "B": "$\\frac{1}{2}x$", "C": "$2x$", "D": "$\\frac{1}{4}x^2$" },
+    "correct": "A",
+    "difficulty": "easy"
   },
   {
-    "question": "¿Quién escribió la novela 'La muerte de Artemio Cruz'?",
-    "options": { "A": "Gabriel García Márquez", "B": "Carlos Fuentes", "C": "Julio Cortázar", "D": "Juan Rulfo" },
+    "question": "¿Cuál es la derivada de $f(x) = x^3 - 2x$?",
+    "options": { "A": "$3x^2 - 2$", "B": "$x^2 - 2$", "C": "$3x^3 - 2x$", "D": "$3x^2 - 2x$" },
+    "correct": "A",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = 6x - 1$?",
+    "options": { "A": "$6$", "B": "$6x$", "C": "$5$", "D": "$6x - 1$" },
+    "correct": "A",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = x^5$?",
+    "options": { "A": "$x^4$", "B": "$5x^4$", "C": "$5x^5$", "D": "$x^6$" },
     "correct": "B",
-    "difficulty": "medium"
+    "difficulty": "easy"
   },
   {
-    "question": "¿Cuál de los siguientes autores pertenece a la Generación del 98, pero su obra tuvo gran influencia en la literatura hispanoamericana del Siglo XX?",
-    "options": { "A": "Miguel de Unamuno", "B": "Federico García Lorca", "C": "Antonio Machado", "D": "Ramón del Valle-Inclán" },
+    "question": "¿Cuál es la derivada de $f(x) = (x + 1)(x - 2)$?",
+    "options": { "A": "$2x - 1$", "B": "$x - 1$", "C": "$2x + 1$", "D": "$x + 1$" },
     "correct": "A",
     "difficulty": "medium"
   },
   {
-    "question": "¿Qué obra de Juan Rulfo es una colección de cuentos ambientados en el México rural?",
-    "options": { "A": "El llano en llamas", "B": "Pedro Páramo", "C": "El Gallo de Oro", "D": "Aire de las colinas" },
-    "correct": "A",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Qué premio Nobel de Literatura obtuvo Gabriela Mistral?",
-    "options": { "A": "1945", "B": "1967", "C": "1982", "D": "1990" },
-    "correct": "A",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Qué escritor argentino es conocido por sus micro-relatos y el cuento 'La noche boca arriba'?",
-    "options": { "A": "Ernesto Sábato", "B": "Jorge Luis Borges", "C": "Julio Cortázar", "D": "Adolfo Bioy Casares" },
-    "correct": "C",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Qué novela de Miguel Ángel Asturias combina elementos del realismo mágico y la crítica social en un contexto guatemalteco?",
-    "options": { "A": "El Señor Presidente", "B": "Hombres de maíz", "C": "Mulata de tal", "D": "Viento fuerte" },
+    "question": "¿Cuál es la derivada de $f(x) = x^2 \\cdot 3x$?",
+    "options": { "A": "$6x^2$", "B": "$9x^2$", "C": "$3x^2$", "D": "$6x$" },
     "correct": "B",
     "difficulty": "medium"
   },
   {
-    "question": "¿Cuál es el seudónimo del poeta chileno Ricardo Eliécer Neftalí Reyes Basoalto?",
-    "options": { "A": "Pablo Neruda", "B": "Vicente Huidobro", "C": "Nicanor Parra", "D": "Gonzalo Rojas" },
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{x^2}{3}$?",
+    "options": { "A": "$\\frac{x}{3}$", "B": "$\\frac{2x}{3}$", "C": "$\\frac{x^2}{6}$", "D": "$\\frac{2x^2}{3}$" },
+    "correct": "B",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\sin(x)$?",
+    "options": { "A": "$-\\cos(x)$", "B": "$\\cos(x)$", "C": "$\\sin(x)$", "D": "$-\\sin(x)$" },
+    "correct": "B",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\cos(x)$?",
+    "options": { "A": "$\\sin(x)$", "B": "$\\cos(x)$", "C": "$-\\sin(x)$", "D": "$-\\cos(x)$" },
+    "correct": "C",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = e^x$?",
+    "options": { "A": "$xe^{x-1}$", "B": "$e^x$", "C": "$e^{x+1}$", "D": "$\\ln(x)$" },
+    "correct": "B",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\ln(x)$?",
+    "options": { "A": "$\\frac{1}{x}$", "B": "$x$", "C": "$\\ln(x)$", "D": "$e^x$" },
     "correct": "A",
     "difficulty": "medium"
   },
   {
-    "question": "¿Qué autor cubano es considerado uno de los precursores del realismo mágico con obras como 'El Reino de este Mundo'?",
-    "options": { "A": "Guillermo Cabrera Infante", "B": "José Lezama Lima", "C": "Alejo Carpentier", "D": "Reinaldo Arenas" },
-    "correct": "C",
+    "question": "¿Cuál es la derivada de $f(x) = 2x^3 - 4x + 7$?",
+    "options": { "A": "$6x^2 - 4$", "B": "$6x^2 - 4x$", "C": "$2x^2 - 4$", "D": "$6x^2 - 4x + 7$" },
+    "correct": "A",
     "difficulty": "medium"
   },
   {
-    "question": "¿Qué novelista mexicano es conocido por su estilo experimental y obras como 'Terra Nostra' y 'La región más transparente'?",
-    "options": { "A": "Juan Rulfo", "B": "Carlos Fuentes", "C": "Fernando del Paso", "D": "José Emilio Pacheco" },
+    "question": "Usando la regla del producto, ¿cuál es la derivada de $f(x) = x^2 \\sin(x)$?",
+    "options": { "A": "$2x\\sin(x) + x^2\\cos(x)$", "B": "$2x\\cos(x) + x^2\\sin(x)$", "C": "$x^2\\cos(x)$", "D": "$2x\\sin(x)$" },
+    "correct": "A",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\tan(x)$?",
+    "options": { "A": "$\\sec(x)$", "B": "$\\sec^2(x)$", "C": "$\\cot(x)$", "D": "$\\csc^2(x)$" },
     "correct": "B",
-    "difficulty": "hard"
+    "difficulty": "medium"
   },
   {
-    "question": "¿Cuál es la obra maestra de José Donoso que explora la decadencia de la aristocracia chilena?",
-    "options": { "A": "El lugar sin límites", "B": "El obsceno pájaro de la noche", "C": "Coronación", "D": "Este domingo" },
+    "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x}$?",
+    "options": { "A": "$\\frac{1}{2\\sqrt{x}}$", "B": "$\\frac{1}{\\sqrt{x}}$", "C": "$2\\sqrt{x}$", "D": "$\\frac{\\sqrt{x}}{2}$" },
+    "correct": "A",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = 5e^x + 3\\ln(x)$?",
+    "options": { "A": "$5e^x + 3x$", "B": "$5e^x + \\frac{3}{x}$", "C": "$5xe^{x-1} + \\frac{3}{x}$", "D": "$5e^x + 3$" },
     "correct": "B",
-    "difficulty": "hard"
+    "difficulty": "medium"
   },
   {
-    "question": "¿Qué poeta chileno es el creador del antipoema y la 'poesía de las cosas'?",
-    "options": { "A": "Pablo Neruda", "B": "Vicente Huidobro", "C": "Nicanor Parra", "D": "Gonzalo Rojas" },
-    "correct": "C",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿En qué obra de Gabriel García Márquez el Coronel Aureliano Buendía espera una pensión que nunca llega?",
-    "options": { "A": "El amor en los tiempos del cólera", "B": "Crónica de una muerte anunciada", "C": "El coronel no tiene quien le escriba", "D": "Noticia de un secuestro" },
-    "correct": "C",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál de estas novelas de Julio Cortázar se estructura como un 'tablero de juego' permitiendo al lector elegir el orden de lectura?",
-    "options": { "A": "Bestiario", "B": "Las armas secretas", "C": "Rayuela", "D": "62/modelo para armar" },
-    "correct": "C",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Qué escritora argentina es considerada una de las figuras clave de la vanguardia y el surrealismo en Latinoamérica?",
-    "options": { "A": "Alejandra Pizarnik", "B": "Silvina Ocampo", "C": "Victoria Ocampo", "D": "María Luisa Bombal" },
-    "correct": "B",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál es la novela de Juan Carlos Onetti que presenta al personaje de Santa María y su atmósfera de desolación y fatalismo?",
-    "options": { "A": "El astillero", "B": "La vida breve", "C": "Juntacadáveres", "D": "Dejemos hablar al viento" },
+    "question": "Usando la regla de la cadena, ¿cuál es la derivada de $f(x) = (3x + 1)^2$?",
+    "options": { "A": "$6(3x + 1)$", "B": "$2(3x + 1)$", "C": "$6x + 2$", "D": "$9x^2 + 6x + 1$" },
     "correct": "A",
     "difficulty": "hard"
   },
   {
-    "question": "¿Qué dramaturgo y ensayista mexicano, ganador del Premio Nobel de Literatura, es conocido por obras como 'El laberinto de la soledad'?",
-    "options": { "A": "Carlos Fuentes", "B": "Juan Rulfo", "C": "Octavio Paz", "D": "Elena Garro" },
+    "question": "¿Cuál es la derivada de $f(x) = \\sin(2x)$?",
+    "options": { "A": "$\\cos(2x)$", "B": "$2\\cos(2x)$", "C": "$2\\sin(2x)$", "D": "$-2\\cos(2x)$" },
+    "correct": "B",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Usando la regla del cociente, ¿cuál es la derivada de $f(x) = \\frac{x}{x+1}$?",
+    "options": { "A": "$\\frac{1}{x+1}$", "B": "$\\frac{1}{(x+1)^2}$", "C": "$\\frac{x}{(x+1)^2}$", "D": "$\\frac{-1}{(x+1)^2}$" },
+    "correct": "B",
+    "difficulty": "hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = e^{x^2}$?",
+    "options": { "A": "$e^{x^2}$", "B": "$x^2e^{x^2}$", "C": "$2xe^{x^2}$", "D": "$2xe^{2x}$" },
     "correct": "C",
     "difficulty": "hard"
   },
   {
-    "question": "¿Qué novela de Laura Esquivel utiliza recetas de cocina para estructurar su narrativa y reflejar las emociones de la protagonista?",
-    "options": { "A": "El libro de las ilusiones", "B": "Estrellita marinera", "C": "Como agua para chocolate", "D": "Tan veloz como el deseo" },
+    "question": "¿Cuál es la derivada de $f(x) = \\ln(x^2 + 1)$?",
+    "options": { "A": "$\\frac{1}{x^2 + 1}$", "B": "$\\frac{2x}{x^2 + 1}$", "C": "$\\frac{x}{x^2 + 1}$", "D": "$\\frac{2}{x^2 + 1}$" },
+    "correct": "B",
+    "difficulty": "hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = x^x$ (para $x > 0$)?",
+    "options": { "A": "$x^x$", "B": "$x^{x-1}$", "C": "$x^x(\\ln(x) + 1)$", "D": "$x^x\\ln(x)$" },
     "correct": "C",
     "difficulty": "hard"
   },
   {
-    "question": "¿Quién es el autor de 'Cuentos de Eva Luna'?",
-    "options": { "A": "Isabel Allende", "B": "Elena Poniatowska", "C": "Ángeles Mastretta", "D": "Laura Restrepo" },
-    "correct": "A",
+    "question": "¿Cuál es la derivada de $f(x) = \\cos(x^2)$?",
+    "options": { "A": "$-\\sin(x^2)$", "B": "$-2x\\sin(x^2)$", "C": "$2x\\cos(x^2)$", "D": "$-2x\\cos(x^2)$" },
+    "correct": "B",
     "difficulty": "hard"
   },
   {
-    "question": "¿Qué movimiento poético fundó Vicente Huidobro, que buscaba crear una nueva realidad a través de la palabra?",
-    "options": { "A": "Creacionismo", "B": "Ultraísmo", "C": "Dadaísmo", "D": "Estridentismo" },
-    "correct": "A",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál es la novela póstuma de Roberto Bolaño que explora la violencia y la literatura en la frontera entre México y Estados Unidos?",
-    "options": { "A": "Los detectives salvajes", "B": "Estrella distante", "C": "Amuleto", "D": "2666" },
+    "question": "Usando la regla del producto, ¿cuál es la derivada de $f(x) = xe^x\\sin(x)$?",
+    "options": { "A": "$e^x\\sin(x) + xe^x\\cos(x) + xe^x\\sin(x)$", "B": "$e^x\\sin(x) + xe^x\\sin(x) + xe^x\\cos(x)$", "C": "$xe^x\\cos(x) + e^x\\sin(x)$", "D": "$e^x\\sin(x) + xe^x(\\sin(x) + \\cos(x))$" },
     "correct": "D",
     "difficulty": "hard"
   },
   {
-    "question": "¿Qué autor uruguayo es reconocido por su obra 'El pozo', considerada una de las primeras novelas existencialistas latinoamericanas?",
-    "options": { "A": "Mario Benedetti", "B": "Juan Carlos Onetti", "C": "Eduardo Galeano", "D": "Horacio Quiroga" },
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{\\sin(x)}{x}$?",
+    "options": { "A": "$\\frac{\\cos(x)}{x}$", "B": "$\\frac{x\\cos(x) - \\sin(x)}{x^2}$", "C": "$\\frac{\\cos(x) - \\sin(x)}{x}$", "D": "$\\frac{\\sin(x) - x\\cos(x)}{x^2}$" },
     "correct": "B",
     "difficulty": "hard"
   },
   {
-    "question": "¿Qué personaje de 'Cien años de soledad' se caracteriza por su sabiduría ancestral y la habilidad de predecir el futuro?",
-    "options": { "A": "Úrsula Iguarán", "B": "José Arcadio Buendía", "C": "Melquíades", "D": "Pilar Ternera" },
-    "correct": "C",
-    "difficulty": "very-hard"
+    "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x^2 + 4}$?",
+    "options": { "A": "$\\frac{x}{\\sqrt{x^2 + 4}}$", "B": "$\\frac{2x}{\\sqrt{x^2 + 4}}$", "C": "$\\frac{1}{2\\sqrt{x^2 + 4}}$", "D": "$\\frac{x^2}{\\sqrt{x^2 + 4}}$" },
+    "correct": "A",
+    "difficulty": "hard"
   },
   {
-    "question": "¿Cuál es la obra de Carlos Fuentes que recrea la historia de México a través de diferentes épocas y personajes históricos?",
-    "options": { "A": "La muerte de Artemio Cruz", "B": "Terra Nostra", "C": "La región más transparente", "D": "Gringo Viejo" },
+    "question": "¿Cuál es la derivada de $f(x) = \\arcsin(x)$?",
+    "options": { "A": "$\\frac{1}{\\sqrt{1-x^2}}$", "B": "$\\frac{-1}{\\sqrt{1-x^2}}$", "C": "$\\frac{1}{1-x^2}$", "D": "$\\frac{x}{\\sqrt{1-x^2}}$" },
+    "correct": "A",
+    "difficulty": "hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = e^{\\sin(x)}$?",
+    "options": { "A": "$e^{\\sin(x)}$", "B": "$\\cos(x)e^{\\sin(x)}$", "C": "$\\sin(x)e^{\\sin(x)}$", "D": "$e^{\\cos(x)}$" },
+    "correct": "B",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Si $x^2 + y^2 = 25$, ¿cuál es $\\frac{dy}{dx}$?",
+    "options": { "A": "$\\frac{x}{y}$", "B": "$-\\frac{x}{y}$", "C": "$\\frac{y}{x}$", "D": "$-\\frac{y}{x}$" },
     "correct": "B",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Qué novela de Julio Cortázar es considerada una sátira de la burocracia y la incomunicación en la sociedad contemporánea?",
-    "options": { "A": "Bestiario", "B": "El perseguidor", "C": "Todos los fuegos el fuego", "D": "Libro de Manuel" },
-    "correct": "D",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Cuál es la novela de Mario Vargas Llosa que explora la figura de un dictador en un país ficticio de América Latina, inspirada en Venezuela?",
-    "options": { "A": "La guerra del fin del mundo", "B": "Conversación en La Catedral", "C": "El paraíso en la otra esquina", "D": "Tiempos recios" },
-    "correct": "D",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Qué autor mexicano es conocido por su novela 'Los de abajo', que retrata la Revolución Mexicana desde la perspectiva de los campesinos?",
-    "options": { "A": "Mariano Azuela", "B": "Martín Luis Guzmán", "C": "Francisco Rojas González", "D": "José Vasconcelos" },
+    "question": "¿Cuál es la segunda derivada de $f(x) = x^4 - 6x^2 + 3$?",
+    "options": { "A": "$12x^2 - 12$", "B": "$4x^3 - 12x$", "C": "$12x - 12$", "D": "$24x$" },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Qué obra de Alejo Carpentier narra la expedición de un músico en busca del origen de un instrumento musical en la selva amazónica?",
-    "options": { "A": "El Reino de este Mundo", "B": "Los pasos perdidos", "C": "Concierto barroco", "D": "La consagración de la primavera" },
-    "correct": "B",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Qué novela de Elena Garro, precursora del realismo mágico, explora temas como la opresión femenina y la identidad indígena en México?",
-    "options": { "A": "Los recuerdos del porvenir", "B": "Andarse por las ramas", "C": "Un hogar sólido", "D": "Reencuentro de personajes" },
+    "question": "Si $xy + y^2 = 6$, ¿cuál es $\\frac{dy}{dx}$?",
+    "options": { "A": "$\\frac{-y}{x + 2y}$", "B": "$\\frac{y}{x + 2y}$", "C": "$\\frac{-x}{x + 2y}$", "D": "$\\frac{x}{x + 2y}$" },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Cuál es la novela de José Lezama Lima, caracterizada por su prosa barroca y hermética, considerada una de las obras cumbres de la literatura cubana?",
-    "options": { "A": "Paradiso", "B": "La fijeza", "C": "Muerte de Narciso", "D": "Oppiano Licario" },
+    "question": "¿Cuál es la derivada de $f(x) = \\ln(\\sin(x))$?",
+    "options": { "A": "$\\frac{1}{\\sin(x)}$", "B": "$\\cot(x)$", "C": "$\\tan(x)$", "D": "$\\frac{\\cos(x)}{\\sin(x)}$" },
+    "correct": "B",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = x^{\\sin(x)}$ (para $x > 0$)?",
+    "options": { "A": "$x^{\\sin(x)}(\\cos(x)\\ln(x) + \\frac{\\sin(x)}{x})$", "B": "$x^{\\sin(x)}\\cos(x)\\ln(x)$", "C": "$\\sin(x)x^{\\sin(x)-1}$", "D": "$x^{\\sin(x)}\\sin(x)\\ln(x)$" },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Qué escritor argentino, conocido por sus cuentos fantásticos y su amistad con Borges, es autor de 'La invención de Morel'?",
-    "options": { "A": "Adolfo Bioy Casares", "B": "Ernesto Sábato", "C": "Manuel Puig", "D": "Ricardo Piglia" },
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{e^x}{x^2 + 1}$?",
+    "options": { "A": "$\\frac{e^x(x^2 + 1) - 2xe^x}{(x^2 + 1)^2}$", "B": "$\\frac{e^x(x^2 - 2x + 1)}{(x^2 + 1)^2}$", "C": "$\\frac{e^x}{x^2 + 1}$", "D": "$\\frac{e^x(x^2 + 1 - 2x)}{(x^2 + 1)^2}$" },
+    "correct": "B",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "Si $\\sin(xy) = x + y$, ¿cuál es $\\frac{dy}{dx}$?",
+    "options": { "A": "$\\frac{1 - y\\cos(xy)}{x\\cos(xy) - 1}$", "B": "$\\frac{1 + y\\cos(xy)}{x\\cos(xy) + 1}$", "C": "$\\frac{y\\cos(xy) - 1}{1 - x\\cos(xy)}$", "D": "$\\frac{1 - \\cos(xy)}{\\cos(xy) - 1}$" },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Qué novela de Gabriel García Márquez es una crónica periodística novelada sobre el secuestro de diez personas en Colombia?",
-    "options": { "A": "El otoño del patriarca", "B": "Crónica de una muerte anunciada", "C": "Noticia de un secuestro", "D": "Relato de un náufrago" },
-    "correct": "C",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Qué autor chileno es conocido por su obra 'La Amortajada', una novela que explora el monólogo interior de una mujer muerta?",
-    "options": { "A": "José Donoso", "B": "Isabel Allende", "C": "María Luisa Bombal", "D": "Alberto Blest Gana" },
-    "correct": "C",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Qué escritora brasileña, aunque de lengua portuguesa, influyó en la literatura hispanoamericana con su estilo innovador y existencialista, como en 'La hora de la estrella'?",
-    "options": { "A": "Clarice Lispector", "B": "Lygia Fagundes Telles", "C": "Rachel de Queiroz", "D": "Carolina Maria de Jesus" },
+    "question": "¿Cuál es la derivada de $f(x) = \\arctan(\\sqrt{x})$?",
+    "options": { "A": "$\\frac{1}{2\\sqrt{x}(1 + x)}$", "B": "$\\frac{1}{2\\sqrt{x}(1 + \\sqrt{x})}$", "C": "$\\frac{1}{\\sqrt{x}(1 + x)}$", "D": "$\\frac{1}{2(1 + x)\\sqrt{x}}$" },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Qué característica principal distingue la narrativa de Julio Cortázar de la de otros autores del Boom Latinoamericano?",
-    "options": { "A": "Uso del realismo mágico de forma política", "B": "Experimentación con la forma y la ruptura de la linealidad", "C": "Enfoque en la crítica social y política directa", "D": "Desarrollo de personajes psicológicamente complejos y atormentados" },
+    "question": "¿Cuál es la tercera derivada de $f(x) = e^{x^2}$?",
+    "options": { "A": "$e^{x^2}(8x^3 + 12x)$", "B": "$e^{x^2}(4x^3 + 6x)$", "C": "$e^{x^2}(8x^3 + 6x)$", "D": "$e^{x^2}(4x^3 + 12x)$" },
+    "correct": "A",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\ln(x + \\sqrt{x^2 + 1})$?",
+    "options": { "A": "$\\frac{1}{\\sqrt{x^2 + 1}}$", "B": "$\\frac{x}{\\sqrt{x^2 + 1}}$", "C": "$\\frac{1}{x + \\sqrt{x^2 + 1}}$", "D": "$\\frac{\\sqrt{x^2 + 1}}{x^2 + 1}$" },
+    "correct": "A",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\int_0^x e^{t^2} dt$?",
+    "options": { "A": "$e^{x^2}$", "B": "$\\int_0^x 2te^{t^2} dt$", "C": "$xe^{x^2}$", "D": "$2xe^{x^2}$" },
+    "correct": "A",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\sinh(x)$ (seno hiperbólico)?",
+    "options": { "A": "$\\sinh(x)$", "B": "$\\cosh(x)$", "C": "$-\\cosh(x)$", "D": "$\\tanh(x)$" },
+    "correct": "B",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "Para una función paramétrica donde $x = t^3$ y $y = t^2$, ¿cuál es $\\frac{dy}{dx}$?",
+    "options": { "A": "$\\frac{2t}{3t^2}$", "B": "$\\frac{2}{3t}$", "C": "$\\frac{3t^2}{2t}$", "D": "$\\frac{3t}{2}$" },
     "correct": "B",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cuál es la relevancia del 'boom' latinoamericano en el contexto de la literatura mundial del siglo XX?",
-    "options": { "A": "Impulsó el desarrollo del surrealismo en América Latina.", "B": "Posicionó a la literatura hispanoamericana como un referente global y renovó las formas narrativas.", "C": "Se centró exclusivamente en la denuncia social y política de las dictaduras.", "D": "Revitalizó el modernismo en una nueva ola de escritores." },
-    "correct": "B",
-    "difficulty": "expert"
-  },
-  {
-    "question": "¿De qué manera el concepto de 'realismo mágico' difiere del 'real maravilloso americano' propuesto por Alejo Carpentier?",
-    "options": { "A": "Son términos sinónimos y no hay diferencia conceptual.", "B": "El realismo mágico se centra en lo onírico, mientras que el real maravilloso se basa en hechos históricos.", "C": "El realismo mágico presenta lo fantástico como parte de la realidad cotidiana, mientras que el real maravilloso surge de la realidad americana por sí misma.", "D": "El realismo mágico es exclusivo de la literatura del 'Boom', mientras que el real maravilloso es anterior." },
-    "correct": "C",
-    "difficulty": "expert"
-  },
-  {
-    "question": "¿Cómo influyó la obra de William Faulkner en el desarrollo de la narrativa de autores como Gabriel García Márquez y Juan Rulfo?",
-    "options": { "A": "Aportó técnicas de monólogo interior y la creación de universos ficticios complejos.", "B": "Introdujo el realismo social y la novela de denuncia.", "C": "Fomentó la escritura de cuentos cortos de corte fantástico.", "D": "Popularizó el uso del lenguaje coloquial y las estructuras lineales." },
+    "question": "¿Cuál es la $n$-ésima derivada de $f(x) = e^{ax}$ donde $a$ es constante?",
+    "options": { "A": "$a^ne^{ax}$", "B": "$na^{n-1}e^{ax}$", "C": "$e^{nax}$", "D": "$\\frac{e^{ax}}{a^n}$" },
     "correct": "A",
     "difficulty": "expert"
   },
   {
-    "question": "¿Qué representa la figura del 'dictador' en las novelas de dictadores hispanoamericanas del siglo XX (ej. 'El Señor Presidente', 'El otoño del patriarca')?",
-    "options": { "A": "Un arquetipo de héroe nacionalista.", "B": "Una crítica al poder absoluto y la opresión política en la región.", "C": "Una idealización del liderazgo autoritario.", "D": "Un personaje secundario con poca relevancia narrativa." },
+    "question": "Si $f$ es derivable en $a$ y $g(x) = [f(x)]^2$, entonces $g'(a) = $?",
+    "options": { "A": "$[f'(a)]^2$", "B": "$2f(a)f'(a)$", "C": "$2f'(a)$", "D": "$f(a)f'(a)$" },
     "correct": "B",
     "difficulty": "expert"
   },
   {
-    "question": "¿Qué papel desempeñó la revista 'Sur' en la promoción y difusión de la literatura hispanoamericana del siglo XX?",
-    "options": { "A": "Fue una revista exclusivamente de poesía.", "B": "Sirvió como plataforma para el debate intelectual y la publicación de obras clave.", "C": "Se dedicó únicamente a la crítica literaria de autores europeos.", "D": "Promovió el ultranacionalismo en la literatura." },
-    "correct": "B",
+    "question": "¿Cuál es la derivada de $f(x) = \\int_{x^2}^{x^3} \\sin(t) dt$?",
+    "options": { "A": "$3x^2\\sin(x^3) - 2x\\sin(x^2)$", "B": "$\\sin(x^3) - \\sin(x^2)$", "C": "$x^2\\sin(x^3) - x\\sin(x^2)$", "D": "$3\\sin(x^3) - 2\\sin(x^2)$" },
+    "correct": "A",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cuál es la importancia de la 'novela de la Revolución Mexicana' (ej. 'Los de abajo') en el panorama literario hispanoamericano?",
-    "options": { "A": "Inauguró el género de la novela histórica en la región.", "B": "Fue el primer movimiento en criticar la dictadura porfirista.", "C": "Reflejó la complejidad social y el desencanto post-revolucionario, alejándose del romanticismo.", "D": "Se centró exclusivamente en la glorificación de los caudillos." },
+    "question": "Para la función $f(x) = |x|$, ¿cuál de las siguientes afirmaciones es correcta?",
+    "options": { "A": "$f'(0) = 0$", "B": "$f'(0) = 1$", "C": "$f'(0)$ no existe", "D": "$f'(0) = -1$" },
     "correct": "C",
     "difficulty": "expert"
   },
   {
-    "question": "¿Qué concepto filosófico o corriente de pensamiento influyó significativamente en la obra de Jorge Luis Borges, especialmente en su exploración de los laberintos, el tiempo y la infinitud?",
-    "options": { "A": "Existencialismo", "B": "Positivismo", "C": "Idealismo y platonismo", "D": "Materialismo histórico" },
-    "correct": "C",
+    "question": "¿Cuál es la derivada direccional de $f(x,y) = x^2y + xy^2$ en el punto $(1,1)$ en la dirección del vector $\\vec{v} = (3,4)$?",
+    "options": { "A": "$\\frac{22}{5}$", "B": "$\\frac{20}{5}$", "C": "$\\frac{18}{5}$", "D": "$\\frac{24}{5}$" },
+    "correct": "A",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cómo se manifiesta la influencia de la oralidad y las tradiciones populares en la obra de Gabriel García Márquez, especialmente en 'Cien años de soledad'?",
-    "options": { "A": "A través de un lenguaje académico y formal.", "B": "Mediante la incorporación de mitos, leyendas y la voz del narrador oral.", "C": "Por medio de diálogos realistas y costumbristas únicamente.", "D": "Limitándose a la descripción de paisajes y costumbres locales." },
+    "question": "Si $f(x) = x^x$ para $x > 0$, ¿cuál es $f''(1)$?",
+    "options": { "A": "$1$", "B": "$2$", "C": "$3$", "D": "$4$" },
     "correct": "B",
     "difficulty": "expert"
   },
   {
-    "question": "¿Qué representa la ciudad de Macondo en 'Cien años de soledad' en un nivel simbólico?",
-    "options": { "A": "Una utopía socialista.", "B": "Un microcosmos de la historia y la realidad de América Latina, con sus ciclos de auge y decadencia.", "C": "Un lugar aislado y sin conexión con el resto del mundo.", "D": "Una metáfora de la modernización tecnológica." },
+    "question": "¿Cuál es la derivada de $f(x) = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$?",
+    "options": { "A": "$\\sum_{n=1}^{\\infty} \\frac{x^{n-1}}{(n-1)!}$", "B": "$\\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$", "C": "$\\sum_{n=1}^{\\infty} \\frac{nx^{n-1}}{n!}$", "D": "$e^x$" },
     "correct": "B",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cuál es la contribución de la literatura del exilio en el siglo XX hispanoamericano?",
-    "options": { "A": "Se limitó a reproducir los temas de sus países de origen sin nuevas perspectivas.", "B": "Enriqueció la literatura con nuevas voces, perspectivas y una reflexión profunda sobre la identidad y la memoria.", "C": "Únicamente se dedicó a la crítica política sin valor literario.", "D": "Marcó el fin de la literatura hispanoamericana." },
+    "question": "Para funciones inversas, si $f$ y $g$ son inversas y ambas derivables, entonces $(f^{-1})'(a) = $?",
+    "options": { "A": "$\\frac{1}{f'(f^{-1}(a))}$", "B": "$f'(a)$", "C": "$\\frac{1}{f'(a)}$", "D": "$[f'(f^{-1}(a))]^{-1}$" },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "¿Cuál es la fórmula de Leibniz para la $n$-ésima derivada de un producto $f(x)g(x)$?",
+    "options": { "A": "$\\sum_{k=0}^{n} f^{(k)}(x)g^{(n-k)}(x)$", "B": "$\\sum_{k=0}^{n} \\binom{n}{k} f^{(k)}(x)g^{(n-k)}(x)$", "C": "$f^{(n)}(x)g(x) + f(x)g^{(n)}(x)$", "D": "$n!\\sum_{k=0}^{n} f^{(k)}(x)g^{(n-k)}(x)$" },
     "correct": "B",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cómo el 'Boom Latinoamericano' impactó la industria editorial y la percepción de la literatura hispanoamericana a nivel global?",
-    "options": { "A": "Disminuyó el interés por la literatura hispanoamericana fuera de la región.", "B": "Creó un fenómeno editorial masivo, aumentando la traducción y venta de obras a nivel internacional, y atrayendo la atención de la crítica.", "C": "Solo afectó a las editoriales locales, sin repercusión internacional.", "D": "Se limitó a un impacto en el ámbito académico sin llegar al público general." },
-    "correct": "B",
+    "question": "Si $f(x) = \\begin{cases} x^2\\sin(\\frac{1}{x}) & \\text{si } x \\neq 0 \\\\ 0 & \\text{si } x = 0 \\end{cases}$, entonces $f'(0) = $?",
+    "options": { "A": "$0$", "B": "$1$", "C": "No existe", "D": "$\\sin(\\frac{1}{0})$" },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "¿Cuál es el valor de $\\lim_{h \\to 0} \\frac{f(x+h) - f(x-h)}{2h}$ para una función derivable $f$?",
+    "options": { "A": "$f'(x)$", "B": "$2f'(x)$", "C": "$\\frac{f'(x)}{2}$", "D": "$f''(x)$" },
+    "correct": "A",
     "difficulty": "expert"
   }
 ]
