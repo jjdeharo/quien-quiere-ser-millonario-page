@@ -73,6 +73,12 @@ export async function loadQuestion(question, questionIndex, optionsGrid, questio
         button.classList.add('option-button');
         button.dataset.option = key;
         button.innerHTML = `${key}) ${question.options[key]}`;
+        
+        // Asegurar que el botón esté habilitado y limpio
+        button.disabled = false;
+        button.style.display = 'block';
+        button.classList.remove('correct', 'incorrect');
+        
         button.onclick = () => onAnswerSelected(key);
         optionsGrid.appendChild(button);
         optionButtons.push(button);
