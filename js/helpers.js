@@ -28,11 +28,11 @@ async function renderMathInElement(element) {
 /**
  * Muestra una caja de mensaje personalizada.
  * @param {string} title - Título de la caja.
- * @param {string} content - Mensaje o contenido a mostrar (puede contener LaTeX).
+ * @param {string} content - Mensaje o contenido a mostrar (puede contener HTML/LaTeX).
  * @param {Array} buttons - Arreglo de botones: { text, className, onClick }
- * @param {boolean} enableLaTeX - Si debe renderizar LaTeX en el contenido (por defecto: true)
+ * @param {boolean} enableHTML - Si debe renderizar HTML/LaTeX en el contenido (por defecto: true)
  */
-export async function showMessageBox(title, content, buttons, enableLaTeX = true) {
+export async function showMessageBox(title, content, buttons, enableHTML = true) {
     const overlay = document.getElementById('messageBoxOverlay');
     const boxTitle = document.getElementById('messageBoxTitle');
     const boxContent = document.getElementById('messageBoxContent');
@@ -40,8 +40,8 @@ export async function showMessageBox(title, content, buttons, enableLaTeX = true
 
     boxTitle.textContent = title;
     
-    // Usar innerHTML en lugar de textContent para permitir LaTeX
-    if (enableLaTeX) {
+    // Usar innerHTML o textContent según el parámetro enableHTML
+    if (enableHTML) {
         boxContent.innerHTML = content;
     } else {
         boxContent.textContent = content;
@@ -62,8 +62,8 @@ export async function showMessageBox(title, content, buttons, enableLaTeX = true
 
     overlay.classList.add('show');
     
-    // Renderizar LaTeX después de mostrar el modal
-    if (enableLaTeX) {
+    // Renderizar LaTeX si el contenido lo contiene y enableHTML está activado
+    if (enableHTML) {
         // Dar tiempo para que el modal se muestre antes de renderizar
         setTimeout(async () => {
             await renderMathInElement(boxContent);
