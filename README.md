@@ -16,7 +16,7 @@ Este repositorio contiene una versión modular del famoso juego **¿Quién Quier
 
 ## 🛠️ ¿Cómo funciona?
 
-La aplicación está centrada en el tema de **magnitudes y unidades**, pero su estructura modular permite reutilizar la lógica del juego con diferentes conjuntos de preguntas. Esto significa que puedes transformarla en un juego de "¿Quién Quiere Ser Millonario?" sobre historia, geografía, matemáticas o ¡lo que se te ocurra!
+La aplicación utiliza un sistema modular que permite reutilizar la lógica del juego con diferentes conjuntos de preguntas. Las preguntas se cargan automáticamente desde un archivo JSON externo, lo que hace extremadamente fácil personalizar el contenido para cualquier tema: historia, geografía, matemáticas, ¡o lo que se te ocurra!
 
 ---
 
@@ -28,25 +28,25 @@ Para entender cómo funciona la app, aquí tienes un desglose de los archivos cl
 
 * `styles.css`: Define la apariencia visual de la app, desde los colores hasta la disposición de los elementos.
 
-* `js/questions.js`: **¡Este es el archivo más importante para ti!** Aquí es donde se almacena el banco de preguntas. Es el único archivo que necesitas modificar para cambiar el contenido temático del juego.
+* **`questions.json`**: **¡El archivo más importante para personalizar!** Aquí es donde se almacenan todas las preguntas en formato JSON. Es el único archivo que necesitas modificar para cambiar el contenido temático del juego.
+
+* `js/questions.js`: Maneja la carga de preguntas desde el archivo JSON e incluye preguntas de respaldo de emergencia.
 
 * `js/helpers.js`, `js/ui.js`, `js/lifelines.js`, `js/main.js`: Estos archivos contienen la lógica interna del juego (cómo se manejan las opciones, las líneas de ayuda, la interfaz de usuario, etc.). **Generalmente no necesitarás modificarlos.**
 
 ---
 
-## ✍️ Actualiza tu Banco de Preguntas en 3 Pasos
+## ✍️ Actualiza tu Banco de Preguntas en 2 Pasos
 
 ¡Cambiar el tema del juego es muy sencillo!
 
-1. **Abre el archivo:** `js/questions.js`
+1. **Abre el archivo:** `questions.json`
 
-2. **Borra el contenido existente** del arreglo `allAvailableQuestions`.
-
-3. **Pega tus nuevas preguntas** dentro del arreglo, siguiendo el formato que se muestra a continuación.
+2. **Modifica el contenido** siguiendo el formato JSON que se muestra a continuación.
 
 ### Formato de Pregunta Requerido
 
-Cada pregunta debe ser un objeto con las siguientes propiedades:
+El archivo `questions.json` debe contener un array de objetos, donde cada pregunta tiene las siguientes propiedades:
 
 * `question`: El texto de la pregunta.
 
@@ -56,16 +56,45 @@ Cada pregunta debe ser un objeto con las siguientes propiedades:
 
 * `difficulty`: El nivel de dificultad de la pregunta. Puede ser `"easy"`, `"medium"`, `"hard"`, `"very-hard"` o `"expert"`.
 
-**Ejemplo:**
+**Ejemplo de estructura del archivo `questions.json`:**
 
 ```json
-{
-  "question": "¿Cuál es la unidad de medida estándar de la longitud en el Sistema Internacional (SI)?",
-  "options": { "A": "Kilogramo", "B": "Segundo", "C": "Metro", "D": "Amperio" },
-  "correct": "C",
-  "difficulty": "easy"
-}
+[
+  {
+    "question": "¿Cuál es la unidad de medida estándar de la longitud en el Sistema Internacional (SI)?",
+    "options": { "A": "Kilogramo", "B": "Segundo", "C": "Metro", "D": "Amperio" },
+    "correct": "C",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuántos metros tiene un kilómetro?",
+    "options": { "A": "100", "B": "1000", "C": "10000", "D": "100000" },
+    "correct": "B",
+    "difficulty": "easy"
+  }
+]
 ```
+
+---
+
+## 🔧 Características Técnicas
+
+### Sistema de Carga Inteligente
+
+- **Carga asíncrona**: Las preguntas se cargan desde `questions.json` al iniciar la aplicación.
+- **Sistema de respaldo**: Si hay problemas cargando el archivo, la aplicación usa preguntas de emergencia para no fallar.
+- **Validación automática**: El sistema verifica que las preguntas tengan la estructura correcta.
+- **Manejo de errores**: Mensajes informativos si algo sale mal durante la carga.
+
+### Niveles de Dificultad
+
+El juego organiza las preguntas en 5 niveles:
+
+- **easy**: Preguntas básicas (nivel 1)
+- **medium**: Preguntas de dificultad media (nivel 2) 
+- **hard**: Preguntas difíciles (nivel 3)
+- **very-hard**: Preguntas muy difíciles (nivel 4)
+- **expert**: Preguntas de experto (nivel 5)
 
 ---
 
@@ -99,8 +128,60 @@ Aquí tienes un ejemplo del formato que espero:
   }
 ]
 
-Por favor, comienza a generar el banco de preguntas.
+Por favor, comienza a generar el banco de preguntas en formato JSON válido.
 ```
+
+---
+
+## 🚦 Instalación y Uso
+
+1. **Descarga o clona** este repositorio
+2. **Personaliza** el archivo `questions.json` con tus preguntas
+3. **Abre** `index.html` en tu navegador web
+4. **¡Disfruta jugando!**
+
+### Requisitos
+
+- Navegador web moderno (Chrome, Firefox, Safari, Edge)
+- Servidor web local (opcional, pero recomendado para evitar problemas con CORS)
+
+### Servir localmente
+
+Si encuentras problemas cargando el archivo JSON, puedes usar un servidor local simple:
+
+```bash
+# Con Python 3
+python -m http.server 8000
+
+# Con Node.js (si tienes http-server instalado)
+npx http-server
+
+# Con PHP
+php -S localhost:8000
+```
+
+Luego abre `http://localhost:8000` en tu navegador.
+
+---
+
+## 🐛 Solución de Problemas
+
+### Las preguntas no se cargan
+
+- **Verifica** que el archivo `questions.json` esté en la raíz del proyecto
+- **Comprueba** que el JSON sea válido usando un validador online
+- **Usa** un servidor web local en lugar de abrir el archivo directamente
+
+### Error de CORS
+
+- **Causa**: Los navegadores bloquean la carga de archivos locales por seguridad
+- **Solución**: Usa un servidor web local (ver sección anterior)
+
+### Preguntas mal formateadas
+
+- **Verifica** que todas las preguntas tengan las propiedades requeridas
+- **Revisa** que los niveles de dificultad sean exactamente: "easy", "medium", "hard", "very-hard", "expert"
+- **Comprueba** que las opciones tengan las claves "A", "B", "C", "D"
 
 ---
 
