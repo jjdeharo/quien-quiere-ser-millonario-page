@@ -122,6 +122,32 @@ h1 {
     text-align: center;
 }
 
+/* Estilos específicos para MathJax */
+.question-text .MathJax,
+.question-text mjx-container {
+    color: #e0f7fa !important;
+}
+
+.option-button .MathJax,
+.option-button mjx-container {
+    color: inherit !important;
+}
+
+.message-box-content .MathJax,
+.message-box-content mjx-container {
+    color: #e0f7fa !important;
+}
+
+/* Asegurar que MathJax no rompa el layout */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+mjx-container[display="true"] {
+    margin: 0.5em 0;
+}
+
 .options-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -142,6 +168,10 @@ h1 {
     font-weight: 600;
     text-align: left;
     width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .option-button:hover:not(:disabled) {
@@ -436,5 +466,18 @@ h1 {
     .control-button { 
         width: 100%; 
         font-size: 1em;
+    }
+    
+    /* Ajustes específicos para MathJax en móviles */
+    mjx-container {
+        font-size: 0.9em !important;
+    }
+    
+    .question-text mjx-container {
+        font-size: 0.85em !important;
+    }
+    
+    .option-button mjx-container {
+        font-size: 0.8em !important;
     }
 }
