@@ -43,6 +43,62 @@ h1 {
     line-height: 1.2;
 }
 
+/* Estilos para la información del tema */
+.theme-info {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+    position: relative;
+}
+
+.theme-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8em;
+    color: #3498db;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    margin: 0;
+    text-align: center;
+}
+
+.theme-description {
+    font-size: 1.2em;
+    color: #ecf0f1;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.theme-info-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.4);
+    margin-top: 5px;
+}
+
+.theme-info-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.6);
+}
+
 .game-image {
     width: 100%;
     max-width: 300px;
@@ -383,6 +439,23 @@ mjx-container[display="true"] {
         font-size: 2.2em; 
     }
     
+    .theme-info {
+        padding: 15px;
+        margin: 5px 0;
+    }
+    
+    .theme-title {
+        font-size: 1.5em;
+    }
+    
+    .theme-description {
+        font-size: 1em;
+    }
+    
+    .theme-content {
+        gap: 8px;
+    }
+    
     .game-area-with-ladder { 
         flex-direction: column; 
         gap: 20px;
@@ -434,6 +507,23 @@ mjx-container[display="true"] {
     
     h1 { 
         font-size: 1.8em; 
+    }
+    
+    .theme-info {
+        padding: 12px;
+    }
+    
+    .theme-title {
+        font-size: 1.3em;
+    }
+    
+    .theme-description {
+        font-size: 0.9em;
+    }
+    
+    .theme-info-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
     }
     
     .lifelines { 
