@@ -1,4 +1,4 @@
-import { allAvailableQuestions } from './questions.js';
+import { loadQuestions, getFallbackQuestions } from './questions.js';
 import { shuffleArray, showMessageBox } from './helpers.js';
 import {
     updatePrizeLadder,
@@ -18,6 +18,8 @@ const difficultyMap = {
     5: 'expert'
 };
 
+// Variables globales
+let allAvailableQuestions = [];
 let playerName = "Jugador";
 let hasPlayerNameBeenSet = false;
 let questions = [];
@@ -29,7 +31,9 @@ let gameStarted = false;
 let used5050 = false;
 let usedCall = false;
 let usedAudience = false;
+let questionsLoaded = false;
 
+// Referencias a elementos del DOM
 const questionText = document.getElementById('questionText');
 const optionsGrid = document.getElementById('optionsGrid');
 const nextButton = document.getElementById('nextQuestionButton');
@@ -38,7 +42,61 @@ const startButton = document.getElementById('startGameButton');
 const prizeLadderElement = document.getElementById('prizeLadder');
 const gameLogoImage = document.getElementById('gameLogoImage');
 
-// Lifelines
+/**
+ * Inicializa el juego cargando las preguntas
+ */
+async function initializeGame() {
+    // Mostrar mensaje de carga
+    questionText.textContent = "Cargando preguntas...";
+    startButton.disabled = true;
+    startButton.textContent = "Cargando...";
+    
+    try {
+        // Intentar cargar preguntas desde JSON
+        allAvailableQuestions = await loadQuestions();
+        
+        // Si no se pudieron cargar, usar preguntas de fallback
+        if (allAvailableQuestions.length === 0) {
+            console.warn('⚠️ Usando preguntas de fallback debido a error en la carga');
+            allAvailableQuestions = getFallbackQuestions();
+            
+            showMessageBox(
+                "Advertencia",
+                "No se pudieron cargar todas las preguntas. El juego funcionará con un conjunto limitado de preguntas de emergencia.",
+                [{ text: "Continuar", className: "confirm" }]
+            );
+        }
+        
+        questionsLoaded = true;
+        questionText.textContent = "Haz clic en 'Empezar Juego' para comenzar.";
+        startButton.disabled = false;
+        startButton.textContent = "Empezar Juego";
+        
+        console.log(`🎮 Juego inicializado con ${allAvailableQuestions.length} preguntas`);
+        
+    } catch (error) {
+        console.error('💥 Error crítico inicializando el juego:', error);
+        
+        // En caso de error crítico, usar preguntas de fallback
+        allAvailableQuestions = getFallbackQuestions();
+        questionsLoaded = true;
+        
+        showMessageBox(
+            "Error de Carga",
+            "Hubo un problema cargando las preguntas. El juego funcionará con preguntas básicas. Verifica tu conexión e intenta recargar la página.",
+            [
+                { text: "Continuar", className: "confirm" },
+                { text: "Recargar", className: "cancel", onClick: () => window.location.reload() }
+            ]
+        );
+        
+        questionText.textContent = "Haz clic en 'Empezar Juego' para comenzar (modo limitado).";
+        startButton.disabled = false;
+        startButton.textContent = "Empezar Juego";
+    }
+}
+
+// Event listeners para las líneas de ayuda
 document.getElementById('lifeline5050').onclick = () => {
     if (!gameStarted || used5050) return;
     showMessageBox("¿Usar 50:50?", "Eliminará dos opciones incorrectas.", [
@@ -122,6 +180,16 @@ function applyAudience() {
 }
 
 function startGame() {
+    // Verificar que las preguntas estén cargadas
+    if (!questionsLoaded) {
+        showMessageBox(
+            "Error",
+            "Las preguntas aún no se han cargado. Por favor, espera un momento e intenta de nuevo.",
+            [{ text: "OK", className: "confirm" }]
+        );
+        return;
+    }
+
     gameStarted = true;
     startButton.style.display = "none";
 
@@ -149,7 +217,7 @@ function startRound() {
         .filter(({ q, i }) => q.difficulty === difficulty && !playedIndices.has(i));
 
     if (available.length < QUESTIONS_PER_GAME || gamesPlayedCount > MAX_GAMES) {
-        showMessageBox("Juego finalizado", "Has completado todas las rondas.", [
+        showMessageBox("Juego finalizado", "Has completado todas las rondas disponibles.", [
             { text: "Reiniciar todo", className: "confirm", onClick: resetAll }
         ]);
         return;
@@ -234,11 +302,13 @@ function updateLogo() {
     gameLogoImage.style.display = 'block';
 }
 
+// Event listeners
 startButton.onclick = startGame;
 nextButton.onclick = nextQuestion;
 restartButton.onclick = startRound;
 
+// Inicialización cuando se carga la página
 window.onload = () => {
     generatePrizeLadder(prizeLadderElement);
-    questionText.textContent = "Haz clic en 'Empezar Juego' para comenzar.";
+    initializeGame(); // Cargar preguntas al inicio
 };
