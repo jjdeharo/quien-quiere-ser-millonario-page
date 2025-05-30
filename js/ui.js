@@ -1,6 +1,7 @@
 // js/ui.js
 
 import { showMessageBox } from './helpers.js';
+import { getCurrentThemeData } from './questions.js';
 
 /**
  * Renderiza las fórmulas LaTeX en un elemento específico usando MathJax
@@ -28,6 +29,64 @@ async function renderMathInElements(elements) {
             console.warn('⚠️ Error renderizando LaTeX:', error);
         }
     }
+}
+
+/**
+ * Actualiza la información del tema en la interfaz
+ */
+export function updateThemeDisplay() {
+    const themeData = getCurrentThemeData();
+    const themeElement = document.getElementById('themeInfo');
+    const themeTitle = document.getElementById('themeTitle');
+    const themeDescription = document.getElementById('themeDescription');
+    
+    if (themeElement && themeTitle) {
+        themeTitle.textContent = themeData.tema;
+        
+        if (themeDescription && themeData.descripcion) {
+            themeDescription.textContent = themeData.descripcion;
+            themeDescription.style.display = 'block';
+        } else if (themeDescription) {
+            themeDescription.style.display = 'none';
+        }
+        
+        // Mostrar el contenedor del tema
+        themeElement.style.display = 'block';
+        
+        console.log(`🎯 Tema mostrado: "${themeData.tema}"`);
+    }
+}
+
+/**
+ * Muestra información detallada del tema en un modal
+ */
+export function showThemeInfo() {
+    const themeData = getCurrentThemeData();
+    
+    let content = `<strong>Tema:</strong> ${themeData.tema}<br><br>`;
+    
+    if (themeData.descripcion) {
+        content += `<strong>Descripción:</strong> ${themeData.descripcion}<br><br>`;
+    }
+    
+    if (themeData.total_preguntas) {
+        content += `<strong>Total de preguntas:</strong> ${themeData.total_preguntas}<br><br>`;
+    }
+    
+    if (themeData.autor) {
+        content += `<strong>Autor:</strong> ${themeData.autor}<br><br>`;
+    }
+    
+    if (themeData.fecha_creacion) {
+        content += `<strong>Fecha de creación:</strong> ${themeData.fecha_creacion}`;
+    }
+    
+    showMessageBox(
+        "Información del Tema",
+        content,
+        [{ text: "Cerrar", className: "confirm" }],
+        false // No renderizar LaTeX ya que es información del tema
+    );
 }
 
 export function updatePrizeLadder(score, total, prizeLadderElement) {
