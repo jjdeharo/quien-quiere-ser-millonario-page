@@ -5,7 +5,9 @@ import {
     generatePrizeLadder,
     loadQuestion,
     markAnswer,
-    askPlayerName
+    askPlayerName,
+    updateThemeDisplay,
+    showThemeInfo
 } from './ui.js';
 
 const QUESTIONS_PER_GAME = 12;
@@ -55,10 +57,16 @@ async function initializeGame() {
         // Intentar cargar preguntas desde JSON
         allAvailableQuestions = await loadQuestions();
         
+        // Actualizar información del tema en la UI
+        updateThemeDisplay();
+        
         // Si no se pudieron cargar, usar preguntas de fallback
         if (allAvailableQuestions.length === 0) {
             console.warn('⚠️ Usando preguntas de fallback debido a error en la carga');
             allAvailableQuestions = getFallbackQuestions();
+            
+            // Actualizar tema para fallback
+            updateThemeDisplay();
             
             showMessageBox(
                 "Advertencia",
@@ -81,6 +89,9 @@ async function initializeGame() {
         allAvailableQuestions = getFallbackQuestions();
         questionsLoaded = true;
         
+        // Actualizar tema para fallback
+        updateThemeDisplay();
+        
         showMessageBox(
             "Error de Carga",
             "Hubo un problema cargando las preguntas. El juego funcionará con preguntas básicas. Verifica tu conexión e intenta recargar la página.",
@@ -95,6 +106,14 @@ async function initializeGame() {
         startButton.textContent = "Empezar Juego";
     }
 }
+
+// Event listener para mostrar información del tema
+document.addEventListener('DOMContentLoaded', () => {
+    const themeInfoButton = document.getElementById('themeInfoButton');
+    if (themeInfoButton) {
+        themeInfoButton.onclick = showThemeInfo;
+    }
+});
 
 // Event listeners para las líneas de ayuda
 document.getElementById('lifeline5050').onclick = () => {
@@ -147,7 +166,7 @@ function applyCall() {
     const correctText = q.options[q.correct];
     showMessageBox("Llamada", `Tu amigo dice: "Creo que es ${q.correct}) ${correctText}."`, [
         { text: "Gracias", className: "confirm" }
-    ]);
+    ], true); // Habilitar LaTeX para la respuesta
 }
 
 function applyAudience() {
@@ -175,8 +194,13 @@ function applyAudience() {
         }
     });
 
-    const summary = options.map(opt => `${opt}: ${votes[opt]}%`).join('\n');
-    showMessageBox("Voto del Público", summary, [{ text: "Ok", className: "confirm" }]);
+    // Construir mensaje con las opciones (que pueden incluir LaTeX)
+    let message = "El público vota:<br><br>";
+    options.forEach(opt => {
+        message += `${opt}) ${q.options[opt]}: ${votes[opt]}%<br>`;
+    });
+
+    showMessageBox("Voto del Público", message, [{ text: "Ok", className: "confirm" }], true);
 }
 
 function startGame() {
@@ -275,7 +299,7 @@ function checkAnswer(selectedKey) {
     } else {
         showMessageBox("¡Incorrecto!", `La correcta era: ${q.correct}) ${q.options[q.correct]}`, [
             { text: "Terminar", className: "cancel", onClick: () => endGame(false) }
-        ]);
+        ], true); // Habilitar LaTeX para mostrar la respuesta correcta
     }
 }
 
