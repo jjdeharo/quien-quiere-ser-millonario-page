@@ -63,8 +63,7 @@ async function initializeGame() {
             showMessageBox(
                 "Advertencia",
                 "No se pudieron cargar todas las preguntas. El juego funcionará con un conjunto limitado de preguntas de emergencia.",
-                [{ text: "Continuar", className: "confirm" }],
-                false // No renderizar LaTeX en este mensaje
+                [{ text: "Continuar", className: "confirm" }]
             );
         }
         
@@ -88,8 +87,7 @@ async function initializeGame() {
             [
                 { text: "Continuar", className: "confirm" },
                 { text: "Recargar", className: "cancel", onClick: () => window.location.reload() }
-            ],
-            false // No renderizar LaTeX en este mensaje
+            ]
         );
         
         questionText.textContent = "Haz clic en 'Empezar Juego' para comenzar (modo limitado).";
@@ -104,7 +102,7 @@ document.getElementById('lifeline5050').onclick = () => {
     showMessageBox("¿Usar 50:50?", "Eliminará dos opciones incorrectas.", [
         { text: "Sí", className: "confirm", onClick: apply5050 },
         { text: "No", className: "cancel" }
-    ], false);
+    ]);
 };
 
 document.getElementById('lifelineCall').onclick = () => {
@@ -112,7 +110,7 @@ document.getElementById('lifelineCall').onclick = () => {
     showMessageBox("¿Usar Llamada?", "Recibirás una pista de un amigo.", [
         { text: "Sí", className: "confirm", onClick: applyCall },
         { text: "No", className: "cancel" }
-    ], false);
+    ]);
 };
 
 document.getElementById('lifelineAudience').onclick = () => {
@@ -120,7 +118,7 @@ document.getElementById('lifelineAudience').onclick = () => {
     showMessageBox("¿Usar Público?", "Verás qué opción prefiere el público.", [
         { text: "Sí", className: "confirm", onClick: applyAudience },
         { text: "No", className: "cancel" }
-    ], false);
+    ]);
 };
 
 function apply5050() {
@@ -147,14 +145,9 @@ function applyCall() {
 
     const q = questions[currentQuestionIndex];
     const correctText = q.options[q.correct];
-    
-    // Usar la función con soporte LaTeX habilitado
-    showMessageBox(
-        "Llamada", 
-        `Tu amigo dice: "Creo que es ${q.correct}) ${correctText}."`, 
-        [{ text: "Gracias", className: "confirm" }],
-        true // Habilitar LaTeX
-    );
+    showMessageBox("Llamada", `Tu amigo dice: "Creo que es ${q.correct}) ${correctText}."`, [
+        { text: "Gracias", className: "confirm" }
+    ]);
 }
 
 function applyAudience() {
@@ -182,13 +175,8 @@ function applyAudience() {
         }
     });
 
-    // Construir mensaje con las opciones (que pueden incluir LaTeX)
-    let summary = "El público vota:<br><br>";
-    options.forEach(opt => {
-        summary += `${opt}) ${q.options[opt]}: ${votes[opt]}%<br>`;
-    });
-    
-    showMessageBox("Voto del Público", summary, [{ text: "Ok", className: "confirm" }], true);
+    const summary = options.map(opt => `${opt}: ${votes[opt]}%`).join('\n');
+    showMessageBox("Voto del Público", summary, [{ text: "Ok", className: "confirm" }]);
 }
 
 function startGame() {
@@ -197,8 +185,7 @@ function startGame() {
         showMessageBox(
             "Error",
             "Las preguntas aún no se han cargado. Por favor, espera un momento e intenta de nuevo.",
-            [{ text: "OK", className: "confirm" }],
-            false
+            [{ text: "OK", className: "confirm" }]
         );
         return;
     }
@@ -222,17 +209,27 @@ function startGame() {
 }
 
 function startRound() {
-    const difficulty = difficultyMap[++gamesPlayedCount];
+    gamesPlayedCount++;
+    
+    // CORRECCIÓN: Verificar límite ANTES de obtener dificultad
+    if (gamesPlayedCount > MAX_GAMES) {
+        showMessageBox("¡Juegos Completados!", "Has jugado 5 partidas únicas o hemos agotado todas las preguntas disponibles para esta dificultad. ¿Quieres empezar desde el principio con todas las preguntas disponibles de nuevo?", [
+            { text: "Sí, reiniciar todo", className: "confirm", onClick: resetAll }
+        ]);
+        return;
+    }
+    
+    const difficulty = difficultyMap[gamesPlayedCount];
     if (!difficulty) return;
 
     const available = allAvailableQuestions
         .map((q, i) => ({ q, i }))
         .filter(({ q, i }) => q.difficulty === difficulty && !playedIndices.has(i));
 
-    if (available.length < QUESTIONS_PER_GAME || gamesPlayedCount > MAX_GAMES) {
+    if (available.length < QUESTIONS_PER_GAME) {
         showMessageBox("Juego finalizado", "Has completado todas las rondas disponibles.", [
             { text: "Reiniciar todo", className: "confirm", onClick: resetAll }
-        ], false);
+        ]);
         return;
     }
 
@@ -246,31 +243,19 @@ function startRound() {
     score = 0;
     used5050 = usedCall = usedAudience = false;
 
-    // Resetear completamente las líneas de ayuda
-    const lifeline5050 = document.getElementById('lifeline5050');
-    const lifelineCall = document.getElementById('lifelineCall');
-    const lifelineAudience = document.getElementById('lifelineAudience');
-    
-    lifeline5050.disabled = false;
-    lifelineCall.disabled = false;
-    lifelineAudience.disabled = false;
-    
-    // Limpiar cualquier estado residual en los botones de opciones
-    optionsGrid.innerHTML = '';
-
     generatePrizeLadder(prizeLadderElement);
     updatePrizeLadder(score, QUESTIONS_PER_GAME, prizeLadderElement);
+
+    document.getElementById('lifeline5050').disabled = false;
+    document.getElementById('lifelineCall').disabled = false;
+    document.getElementById('lifelineAudience').disabled = false;
 
     loadCurrentQuestion();
 }
 
-async function loadCurrentQuestion() {
+function loadCurrentQuestion() {
     const q = questions[currentQuestionIndex];
-    
-    // Limpiar cualquier estado residual antes de cargar
-    optionsGrid.innerHTML = '';
-    
-    await loadQuestion(q, currentQuestionIndex, optionsGrid, questionText, checkAnswer);
+    loadQuestion(q, currentQuestionIndex, optionsGrid, questionText, checkAnswer);
     nextButton.style.display = "none";
 }
 
@@ -286,16 +271,11 @@ function checkAnswer(selectedKey) {
         updatePrizeLadder(score, QUESTIONS_PER_GAME, prizeLadderElement);
         showMessageBox("¡Correcto!", `Bien hecho, ${playerName}.`, [
             { text: "Siguiente", className: "confirm", onClick: nextQuestion }
-        ], false);
+        ]);
     } else {
-        // Mostrar la respuesta correcta con posible LaTeX
-        const correctText = q.options[q.correct];
-        showMessageBox(
-            "¡Incorrecto!", 
-            `La correcta era: ${q.correct}) ${correctText}`, 
-            [{ text: "Terminar", className: "cancel", onClick: () => endGame(false) }],
-            true // Habilitar LaTeX
-        );
+        showMessageBox("¡Incorrecto!", `La correcta era: ${q.correct}) ${q.options[q.correct]}`, [
+            { text: "Terminar", className: "cancel", onClick: () => endGame(false) }
+        ]);
     }
 }
 
@@ -315,33 +295,13 @@ function endGame(won) {
 
     showMessageBox(won ? "¡Ganaste!" : "Game Over", message, [
         { text: "Reiniciar", className: "confirm", onClick: startRound }
-    ], false);
+    ]);
 }
 
 function resetAll() {
     playedIndices.clear();
     gamesPlayedCount = 0;
     hasPlayerNameBeenSet = false;
-    gameStarted = false; // Importante: resetear el estado del juego
-    
-    // Limpiar completamente las líneas de ayuda
-    used5050 = usedCall = usedAudience = false;
-    const lifeline5050 = document.getElementById('lifeline5050');
-    const lifelineCall = document.getElementById('lifelineCall');
-    const lifelineAudience = document.getElementById('lifelineAudience');
-    
-    lifeline5050.disabled = false;
-    lifelineCall.disabled = false;
-    lifelineAudience.disabled = false;
-    
-    // Limpiar área de opciones
-    optionsGrid.innerHTML = '';
-    
-    // Mostrar botón de inicio y ocultar otros
-    startButton.style.display = "block";
-    nextButton.style.display = "none";
-    restartButton.style.display = "none";
-    
     gameLogoImage.style.display = "block";
     startGame();
 }
