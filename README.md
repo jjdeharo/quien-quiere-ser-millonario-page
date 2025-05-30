@@ -131,7 +131,17 @@ Aquí tienes un ejemplo del formato que espero:
 Por favor, comienza a generar el banco de preguntas en formato JSON válido.
 ```
 
+---
 
+## ✏️ Modifica el archivo de preguntas manualmente
+Puedes modificar el archivo manualmente con el [Editor JSON](https://labia.tiddlyhost.com/#Editor%20JSON)
+
+Baja el archivo questions.json a tu ordenador, áabrelo con el programa anterior y después vuélvelo a subir.
+
+Puedes:
+- Modificar preguntas.
+- Eliminar preguntas.
+- Añadir preguntas.
 
 ---
 
