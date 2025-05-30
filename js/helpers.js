@@ -12,19 +12,41 @@ export function shuffleArray(array) {
 }
 
 /**
+ * Renderiza las fórmulas LaTeX en un elemento específico usando MathJax
+ * @param {HTMLElement} element - El elemento que contiene fórmulas LaTeX
+ */
+async function renderMathInElement(element) {
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        try {
+            await window.MathJax.typesetPromise([element]);
+        } catch (error) {
+            console.warn('⚠️ Error renderizando LaTeX:', error);
+        }
+    }
+}
+
+/**
  * Muestra una caja de mensaje personalizada.
  * @param {string} title - Título de la caja.
- * @param {string} content - Mensaje o contenido a mostrar.
+ * @param {string} content - Mensaje o contenido a mostrar (puede contener LaTeX).
  * @param {Array} buttons - Arreglo de botones: { text, className, onClick }
+ * @param {boolean} enableLaTeX - Si debe renderizar LaTeX en el contenido (por defecto: true)
  */
-export function showMessageBox(title, content, buttons) {
+export async function showMessageBox(title, content, buttons, enableLaTeX = true) {
     const overlay = document.getElementById('messageBoxOverlay');
     const boxTitle = document.getElementById('messageBoxTitle');
     const boxContent = document.getElementById('messageBoxContent');
     const boxButtons = document.getElementById('messageBoxButtons');
 
     boxTitle.textContent = title;
-    boxContent.textContent = content;
+    
+    // Usar innerHTML en lugar de textContent para permitir LaTeX
+    if (enableLaTeX) {
+        boxContent.innerHTML = content;
+    } else {
+        boxContent.textContent = content;
+    }
+    
     boxButtons.innerHTML = '';
 
     buttons.forEach(({ text, className, onClick }) => {
@@ -39,6 +61,14 @@ export function showMessageBox(title, content, buttons) {
     });
 
     overlay.classList.add('show');
+    
+    // Renderizar LaTeX después de mostrar el modal
+    if (enableLaTeX) {
+        // Dar tiempo para que el modal se muestre antes de renderizar
+        setTimeout(async () => {
+            await renderMathInElement(boxContent);
+        }, 50);
+    }
 }
 
 /**
@@ -47,4 +77,14 @@ export function showMessageBox(title, content, buttons) {
 export function hideMessageBox() {
     const overlay = document.getElementById('messageBoxOverlay');
     overlay.classList.remove('show');
+}
+
+/**
+ * Versión especializada para mostrar mensajes con LaTeX garantizado
+ * @param {string} title - Título de la caja
+ * @param {string} content - Contenido con fórmulas LaTeX
+ * @param {Array} buttons - Botones del mensaje
+ */
+export function showMessageBoxWithMath(title, content, buttons) {
+    return showMessageBox(title, content, buttons, true);
 }
