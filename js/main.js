@@ -1,5 +1,5 @@
 import { loadQuestions, getFallbackQuestions } from './questions.js';
-import { shuffleArray, showMessageBox } from './helpers.js';
+import { shuffleArray, showMessageBox, showMessageBoxWithMath } from './helpers.js';
 import {
     updatePrizeLadder,
     generatePrizeLadder,
@@ -63,7 +63,8 @@ async function initializeGame() {
             showMessageBox(
                 "Advertencia",
                 "No se pudieron cargar todas las preguntas. El juego funcionará con un conjunto limitado de preguntas de emergencia.",
-                [{ text: "Continuar", className: "confirm" }]
+                [{ text: "Continuar", className: "confirm" }],
+                false // No renderizar LaTeX en este mensaje
             );
         }
         
@@ -87,7 +88,8 @@ async function initializeGame() {
             [
                 { text: "Continuar", className: "confirm" },
                 { text: "Recargar", className: "cancel", onClick: () => window.location.reload() }
-            ]
+            ],
+            false // No renderizar LaTeX en este mensaje
         );
         
         questionText.textContent = "Haz clic en 'Empezar Juego' para comenzar (modo limitado).";
@@ -102,7 +104,7 @@ document.getElementById('lifeline5050').onclick = () => {
     showMessageBox("¿Usar 50:50?", "Eliminará dos opciones incorrectas.", [
         { text: "Sí", className: "confirm", onClick: apply5050 },
         { text: "No", className: "cancel" }
-    ]);
+    ], false);
 };
 
 document.getElementById('lifelineCall').onclick = () => {
@@ -110,7 +112,7 @@ document.getElementById('lifelineCall').onclick = () => {
     showMessageBox("¿Usar Llamada?", "Recibirás una pista de un amigo.", [
         { text: "Sí", className: "confirm", onClick: applyCall },
         { text: "No", className: "cancel" }
-    ]);
+    ], false);
 };
 
 document.getElementById('lifelineAudience').onclick = () => {
@@ -118,7 +120,7 @@ document.getElementById('lifelineAudience').onclick = () => {
     showMessageBox("¿Usar Público?", "Verás qué opción prefiere el público.", [
         { text: "Sí", className: "confirm", onClick: applyAudience },
         { text: "No", className: "cancel" }
-    ]);
+    ], false);
 };
 
 function apply5050() {
@@ -145,9 +147,13 @@ function applyCall() {
 
     const q = questions[currentQuestionIndex];
     const correctText = q.options[q.correct];
-    showMessageBox("Llamada", `Tu amigo dice: "Creo que es ${q.correct}) ${correctText}."`, [
-        { text: "Gracias", className: "confirm" }
-    ]);
+    
+    // Usar la función especializada para mensajes con matemáticas
+    showMessageBoxWithMath(
+        "Llamada", 
+        `Tu amigo dice: "Creo que es ${q.correct}) ${correctText}."`, 
+        [{ text: "Gracias", className: "confirm" }]
+    );
 }
 
 function applyAudience() {
@@ -175,8 +181,13 @@ function applyAudience() {
         }
     });
 
-    const summary = options.map(opt => `${opt}: ${votes[opt]}%`).join('\n');
-    showMessageBox("Voto del Público", summary, [{ text: "Ok", className: "confirm" }]);
+    // Construir mensaje con las opciones (que pueden incluir LaTeX)
+    let summary = "El público vota:<br><br>";
+    options.forEach(opt => {
+        summary += `${opt}) ${q.options[opt]}: ${votes[opt]}%<br>`;
+    });
+    
+    showMessageBoxWithMath("Voto del Público", summary, [{ text: "Ok", className: "confirm" }]);
 }
 
 function startGame() {
@@ -185,7 +196,8 @@ function startGame() {
         showMessageBox(
             "Error",
             "Las preguntas aún no se han cargado. Por favor, espera un momento e intenta de nuevo.",
-            [{ text: "OK", className: "confirm" }]
+            [{ text: "OK", className: "confirm" }],
+            false
         );
         return;
     }
@@ -219,7 +231,7 @@ function startRound() {
     if (available.length < QUESTIONS_PER_GAME || gamesPlayedCount > MAX_GAMES) {
         showMessageBox("Juego finalizado", "Has completado todas las rondas disponibles.", [
             { text: "Reiniciar todo", className: "confirm", onClick: resetAll }
-        ]);
+        ], false);
         return;
     }
 
@@ -243,9 +255,9 @@ function startRound() {
     loadCurrentQuestion();
 }
 
-function loadCurrentQuestion() {
+async function loadCurrentQuestion() {
     const q = questions[currentQuestionIndex];
-    loadQuestion(q, currentQuestionIndex, optionsGrid, questionText, checkAnswer);
+    await loadQuestion(q, currentQuestionIndex, optionsGrid, questionText, checkAnswer);
     nextButton.style.display = "none";
 }
 
@@ -261,11 +273,15 @@ function checkAnswer(selectedKey) {
         updatePrizeLadder(score, QUESTIONS_PER_GAME, prizeLadderElement);
         showMessageBox("¡Correcto!", `Bien hecho, ${playerName}.`, [
             { text: "Siguiente", className: "confirm", onClick: nextQuestion }
-        ]);
+        ], false);
     } else {
-        showMessageBox("¡Incorrecto!", `La correcta era: ${q.correct}) ${q.options[q.correct]}`, [
-            { text: "Terminar", className: "cancel", onClick: () => endGame(false) }
-        ]);
+        // Mostrar la respuesta correcta con posible LaTeX
+        const correctText = q.options[q.correct];
+        showMessageBoxWithMath(
+            "¡Incorrecto!", 
+            `La correcta era: ${q.correct}) ${correctText}`, 
+            [{ text: "Terminar", className: "cancel", onClick: () => endGame(false) }]
+        );
     }
 }
 
@@ -285,7 +301,7 @@ function endGame(won) {
 
     showMessageBox(won ? "¡Ganaste!" : "Game Over", message, [
         { text: "Reiniciar", className: "confirm", onClick: startRound }
-    ]);
+    ], false);
 }
 
 function resetAll() {
