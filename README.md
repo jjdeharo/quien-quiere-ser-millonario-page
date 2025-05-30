@@ -59,29 +59,55 @@ Para 60 preguntas totales:
 
 ## 🤖 Genera Preguntas con IA
 
-Usa este prompt con ChatGPT/Gemini:
+Usa este prompt completo con ChatGPT/Gemini:
 
 ```
-Genera un banco de 60 preguntas en formato JSON con la siguiente estructura:
+Quiero que generes un banco de preguntas y respuestas en formato JSON con tema. Cada pregunta debe tener las siguientes propiedades: question (la pregunta en sí), options (un objeto con 4 opciones de respuesta etiquetadas A, B, C, D), correct (la letra de la opción correcta), y difficulty (la dificultad de la pregunta).
 
+El tema de las preguntas debe ser "[REEMPLAZA ESTO CON TU TEMA]". Si hay fórmulas, estas deben seguir el formato LaTeX usando $formula$ para fórmulas en línea y $formula$ para fórmulas en bloque.
+
+Estructura requerida:
 {
   "tema": "[TU TEMA AQUÍ]",
   "descripcion": "Descripción del contenido del quiz",
   "autor": "Generado con IA",
   "fecha_creacion": "2025-05-30",
   "total_preguntas": 60,
+  "preguntas": [...]
+}
+
+Necesito un total de 60 preguntas, distribuidas de la siguiente manera:
+- 12 preguntas de dificultad "easy"
+- 12 preguntas de dificultad "medium"  
+- 12 preguntas de dificultad "hard"
+- 12 preguntas de dificultad "very-hard"
+- 12 preguntas de dificultad "expert"
+
+Asegúrate de que:
+- Las preguntas sean variadas dentro del tema
+- Las opciones de respuesta sean plausibles para dificultar la elección
+- No sean trampas evidentes
+- Si incluyes fórmulas matemáticas, usa LaTeX: $f(x) = x^2$, $\frac{a}{b}$, $\int f(x)dx$, etc.
+
+Ejemplo del formato esperado:
+
+{
+  "tema": "Derivadas de Funciones - Bachillerato",
+  "descripcion": "Preguntas sobre cálculo diferencial y derivadas",
+  "autor": "Generado con IA", 
+  "fecha_creacion": "2025-05-30",
+  "total_preguntas": 60,
   "preguntas": [
     {
-      "question": "Pregunta aquí (usar LaTeX si necesario: $formula$)",
-      "options": { "A": "Opción A", "B": "Opción B", "C": "Opción C", "D": "Opción D" },
+      "question": "¿Cuál es la derivada de $f(x) = x^2$?",
+      "options": { "A": "$2x$", "B": "$x$", "C": "$x^2$", "D": "$2x^2$" },
       "correct": "A",
       "difficulty": "easy"
     }
   ]
 }
 
-Distribución: 12 easy, 12 medium, 12 hard, 12 very-hard, 12 expert.
-Si incluyes fórmulas, usa formato LaTeX: $f(x) = x^2$, $\frac{a}{b}$, etc.
+Por favor, comienza a generar el banco completo en formato JSON válido.
 ```
 
 ## 📐 LaTeX Básico
