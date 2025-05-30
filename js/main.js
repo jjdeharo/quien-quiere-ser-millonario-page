@@ -246,18 +246,30 @@ function startRound() {
     score = 0;
     used5050 = usedCall = usedAudience = false;
 
+    // Resetear completamente las líneas de ayuda
+    const lifeline5050 = document.getElementById('lifeline5050');
+    const lifelineCall = document.getElementById('lifelineCall');
+    const lifelineAudience = document.getElementById('lifelineAudience');
+    
+    lifeline5050.disabled = false;
+    lifelineCall.disabled = false;
+    lifelineAudience.disabled = false;
+    
+    // Limpiar cualquier estado residual en los botones de opciones
+    optionsGrid.innerHTML = '';
+
     generatePrizeLadder(prizeLadderElement);
     updatePrizeLadder(score, QUESTIONS_PER_GAME, prizeLadderElement);
-
-    document.getElementById('lifeline5050').disabled = false;
-    document.getElementById('lifelineCall').disabled = false;
-    document.getElementById('lifelineAudience').disabled = false;
 
     loadCurrentQuestion();
 }
 
 async function loadCurrentQuestion() {
     const q = questions[currentQuestionIndex];
+    
+    // Limpiar cualquier estado residual antes de cargar
+    optionsGrid.innerHTML = '';
+    
     await loadQuestion(q, currentQuestionIndex, optionsGrid, questionText, checkAnswer);
     nextButton.style.display = "none";
 }
@@ -310,6 +322,26 @@ function resetAll() {
     playedIndices.clear();
     gamesPlayedCount = 0;
     hasPlayerNameBeenSet = false;
+    gameStarted = false; // Importante: resetear el estado del juego
+    
+    // Limpiar completamente las líneas de ayuda
+    used5050 = usedCall = usedAudience = false;
+    const lifeline5050 = document.getElementById('lifeline5050');
+    const lifelineCall = document.getElementById('lifelineCall');
+    const lifelineAudience = document.getElementById('lifelineAudience');
+    
+    lifeline5050.disabled = false;
+    lifelineCall.disabled = false;
+    lifelineAudience.disabled = false;
+    
+    // Limpiar área de opciones
+    optionsGrid.innerHTML = '';
+    
+    // Mostrar botón de inicio y ocultar otros
+    startButton.style.display = "block";
+    nextButton.style.display = "none";
+    restartButton.style.display = "none";
+    
     gameLogoImage.style.display = "block";
     startGame();
 }
