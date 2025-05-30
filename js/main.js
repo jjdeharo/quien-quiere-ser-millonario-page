@@ -216,6 +216,12 @@ function startGame() {
 
     gameStarted = true;
     startButton.style.display = "none";
+    
+    // Ocultar información del tema cuando empiece el juego
+    const themeInfo = document.getElementById('themeInfo');
+    if (themeInfo) {
+        themeInfo.style.display = "none";
+    }
 
     if (!hasPlayerNameBeenSet) {
         setTimeout(() => {
@@ -238,7 +244,7 @@ function startRound() {
     // CORRECCIÓN: Verificar límite ANTES de obtener dificultad
     if (gamesPlayedCount > MAX_GAMES) {
         showMessageBox("¡Juegos Completados!", "Has jugado 5 partidas únicas o hemos agotado todas las preguntas disponibles para esta dificultad. ¿Quieres empezar desde el principio con todas las preguntas disponibles de nuevo?", [
-            { text: "Sí, reiniciar todo", className: "confirm", onClick: resetAll }
+            { text: "Sí, volver al inicio", className: "confirm", onClick: resetAll }
         ]);
         return;
     }
@@ -252,7 +258,7 @@ function startRound() {
 
     if (available.length < QUESTIONS_PER_GAME) {
         showMessageBox("Juego finalizado", "Has completado todas las rondas disponibles.", [
-            { text: "Reiniciar todo", className: "confirm", onClick: resetAll }
+            { text: "Volver al inicio", className: "confirm", onClick: resetAll }
         ]);
         return;
     }
@@ -317,17 +323,44 @@ function endGame(won) {
         ? `¡Felicidades, ${playerName}! Has ganado el juego con ${score} puntos.`
         : `¡Fin del juego! Tu puntuación fue: ${score}.`;
 
-    showMessageBox(won ? "¡Ganaste!" : "Game Over", message, [
-        { text: "Reiniciar", className: "confirm", onClick: startRound }
-    ]);
+    const buttons = [
+        { text: "Siguiente Ronda", className: "confirm", onClick: startRound }
+    ];
+    
+    // Si ya jugó todas las rondas o quiere volver al inicio, agregar opción
+    if (gamesPlayedCount >= MAX_GAMES) {
+        buttons.unshift({ text: "Volver al Inicio", className: "cancel", onClick: resetAll });
+    } else {
+        buttons.push({ text: "Volver al Inicio", className: "cancel", onClick: resetAll });
+    }
+
+    showMessageBox(won ? "¡Ganaste!" : "Game Over", message, buttons);
 }
 
 function resetAll() {
     playedIndices.clear();
     gamesPlayedCount = 0;
     hasPlayerNameBeenSet = false;
+    gameStarted = false; // Resetear el estado del juego
+    
+    // Mostrar elementos de la pantalla inicial
     gameLogoImage.style.display = "block";
-    startGame();
+    startButton.style.display = "block";
+    startButton.textContent = "Empezar Juego";
+    
+    // Volver a mostrar información del tema
+    const themeInfo = document.getElementById('themeInfo');
+    if (themeInfo) {
+        themeInfo.style.display = "block";
+    }
+    
+    // Limpiar área de preguntas
+    questionText.textContent = "Haz clic en 'Empezar Juego' para comenzar.";
+    optionsGrid.innerHTML = '';
+    
+    // Ocultar botones de control del juego
+    nextButton.style.display = "none";
+    restartButton.style.display = "none";
 }
 
 function updateLogo() {
