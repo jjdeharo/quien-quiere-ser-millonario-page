@@ -1,361 +1,661 @@
 [
   {
-    "question": "¿Cuál es la derivada de $f(x) = 3x^2$?",
-    "options": { "A": "$6x$", "B": "$3x$", "C": "$6x^2$", "D": "$9x$" },
+    "question": "¿Cuál es la derivada de $f(x) = 5x$?",
+    "options": {
+      "A": "$5$",
+      "B": "$5x$",
+      "C": "$x$",
+      "D": "$0$"
+    },
     "correct": "A",
     "difficulty": "easy"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = 5x^3$?",
-    "options": { "A": "$5x^2$", "B": "$15x^2$", "C": "$15x^3$", "D": "$5x^4$" },
-    "correct": "B",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = x^4$?",
-    "options": { "A": "$x^3$", "B": "$4x^3$", "C": "$4x^4$", "D": "$x^5$" },
+    "question": "¿Cuál es la derivada de $f(x) = x^3$?",
+    "options": {
+      "A": "$x^2$",
+      "B": "$3x^2$",
+      "C": "$3x^3$",
+      "D": "$\\frac{x^4}{4}$"
+    },
     "correct": "B",
     "difficulty": "easy"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = 7$?",
-    "options": { "A": "$7$", "B": "$7x$", "C": "$0$", "D": "$1$" },
+    "options": {
+      "A": "$7$",
+      "B": "$7x$",
+      "C": "$0$",
+      "D": "$1$"
+    },
     "correct": "C",
     "difficulty": "easy"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = x$?",
-    "options": { "A": "$0$", "B": "$1$", "C": "$x$", "D": "$2x$" },
-    "correct": "B",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = 2x + 5$?",
-    "options": { "A": "$2$", "B": "$2x$", "C": "$7$", "D": "$2x + 5$" },
-    "correct": "A",
-    "difficulty": "easy"
-  },
-  {
     "question": "¿Cuál es la derivada de $f(x) = x^2 + 3x$?",
-    "options": { "A": "$x + 3$", "B": "$2x + 3$", "C": "$x^2 + 3$", "D": "$2x^2 + 3x$" },
-    "correct": "B",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = -4x^2$?",
-    "options": { "A": "$-4x$", "B": "$-8x$", "C": "$4x$", "D": "$-8x^2$" },
-    "correct": "B",
-    "difficulty": "easy"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\frac{1}{2}x^2$?",
-    "options": { "A": "$x$", "B": "$\\frac{1}{2}x$", "C": "$2x$", "D": "$\\frac{1}{4}x^2$" },
+    "options": {
+      "A": "$2x + 3$",
+      "B": "$x^2 + 3$",
+      "C": "$2x + 3x$",
+      "D": "$x + 3$"
+    },
     "correct": "A",
     "difficulty": "easy"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = x^3 - 2x$?",
-    "options": { "A": "$3x^2 - 2$", "B": "$x^2 - 2$", "C": "$3x^3 - 2x$", "D": "$3x^2 - 2x$" },
-    "correct": "A",
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{1}{x}$?",
+    "options": {
+      "A": "$\\frac{1}{x^2}$",
+      "B": "$-\\frac{1}{x^2}$",
+      "C": "$-\\frac{1}{x}$",
+      "D": "$\\frac{-2}{x^3}$"
+    },
+    "correct": "B",
     "difficulty": "easy"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = 6x - 1$?",
-    "options": { "A": "$6$", "B": "$6x$", "C": "$5$", "D": "$6x - 1$" },
+    "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x}$?",
+    "options": {
+      "A": "$\\frac{1}{\\sqrt{x}}$",
+      "B": "$\\frac{1}{2\\sqrt{x}}$",
+      "C": "$2\\sqrt{x}$",
+      "D": "$\\frac{2}{\\sqrt{x}}$"
+    },
+    "correct": "B",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = 4x^2 - 2x + 1$?",
+    "options": {
+      "A": "$8x - 2$",
+      "B": "$4x - 2$",
+      "C": "$8x - 1$",
+      "D": "$4x^2 - 2$"
+    },
     "correct": "A",
     "difficulty": "easy"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = x^5$?",
-    "options": { "A": "$x^4$", "B": "$5x^4$", "C": "$5x^5$", "D": "$x^6$" },
+    "options": {
+      "A": "$x^4$",
+      "B": "$5x^4$",
+      "C": "$5x^5$",
+      "D": "$\\frac{x^6}{6}$"
+    },
     "correct": "B",
     "difficulty": "easy"
   },
   {
+    "question": "¿Cuál es la derivada de $f(x) = 3x^4$?",
+    "options": {
+      "A": "$12x^3$",
+      "B": "$3x^3$",
+      "C": "$12x^4$",
+      "D": "$4x^3$"
+    },
+    "correct": "A",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = x - 5$?",
+    "options": {
+      "A": "$x$",
+      "B": "$1$",
+      "C": "$-5$",
+      "D": "$0$"
+    },
+    "correct": "B",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = 2x^3 + x^2$?",
+    "options": {
+      "A": "$6x^2 + 2x$",
+      "B": "$2x^2 + x$",
+      "C": "$6x^3 + 2x^2$",
+      "D": "$6x^2 + x$"
+    },
+    "correct": "A",
+    "difficulty": "easy"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{x^3}{3}$?",
+    "options": {
+      "A": "$x^2$",
+      "B": "$\\frac{x^2}{3}$",
+      "C": "$3x^2$",
+      "D": "$\\frac{x^4}{12}$"
+    },
+    "correct": "A",
+    "difficulty": "easy"
+  },
+  {
     "question": "¿Cuál es la derivada de $f(x) = (x + 1)(x - 2)$?",
-    "options": { "A": "$2x - 1$", "B": "$x - 1$", "C": "$2x + 1$", "D": "$x + 1$" },
+    "options": {
+      "A": "$2x - 1$",
+      "B": "$x - 1$",
+      "C": "$2x + 1$",
+      "D": "$x + 2$"
+    },
     "correct": "A",
     "difficulty": "medium"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = x^2 \\cdot 3x$?",
-    "options": { "A": "$6x^2$", "B": "$9x^2$", "C": "$3x^2$", "D": "$6x$" },
-    "correct": "B",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\frac{x^2}{3}$?",
-    "options": { "A": "$\\frac{x}{3}$", "B": "$\\frac{2x}{3}$", "C": "$\\frac{x^2}{6}$", "D": "$\\frac{2x^2}{3}$" },
+    "question": "¿Cuál es la derivada de $f(x) = x^2 \\cdot e^x$?",
+    "options": {
+      "A": "$2x \\cdot e^x$",
+      "B": "$x^2 \\cdot e^x + 2x \\cdot e^x$",
+      "C": "$x^2 \\cdot e^x$",
+      "D": "$2x + e^x$"
+    },
     "correct": "B",
     "difficulty": "medium"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\sin(x)$?",
-    "options": { "A": "$-\\cos(x)$", "B": "$\\cos(x)$", "C": "$\\sin(x)$", "D": "$-\\sin(x)$" },
-    "correct": "B",
+    "options": {
+      "A": "$\\sin(x)$",
+      "B": "$-\\cos(x)$",
+      "C": "$\\cos(x)$",
+      "D": "$-\\sin(x)$"
+    },
+    "correct": "C",
     "difficulty": "medium"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\cos(x)$?",
-    "options": { "A": "$\\sin(x)$", "B": "$\\cos(x)$", "C": "$-\\sin(x)$", "D": "$-\\cos(x)$" },
-    "correct": "C",
+    "options": {
+      "A": "$\\sin(x)$",
+      "B": "$-\\sin(x)$",
+      "C": "$\\cos(x)$",
+      "D": "$-\\cos(x)$"
+    },
+    "correct": "B",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{x}{x+1}$?",
+    "options": {
+      "A": "$\\frac{1}{(x+1)^2}$",
+      "B": "$\\frac{1}{x+1}$",
+      "C": "$\\frac{x}{(x+1)^2}$",
+      "D": "$\\frac{-x}{(x+1)^2}$"
+    },
+    "correct": "A",
     "difficulty": "medium"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = e^x$?",
-    "options": { "A": "$xe^{x-1}$", "B": "$e^x$", "C": "$e^{x+1}$", "D": "$\\ln(x)$" },
-    "correct": "B",
+    "options": {
+      "A": "$e^x$",
+      "B": "$xe^{x-1}$",
+      "C": "$\\frac{e^x}{x}$",
+      "D": "$e^{x+1}$"
+    },
+    "correct": "A",
     "difficulty": "medium"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\ln(x)$?",
-    "options": { "A": "$\\frac{1}{x}$", "B": "$x$", "C": "$\\ln(x)$", "D": "$e^x$" },
+    "options": {
+      "A": "$\\frac{1}{x}$",
+      "B": "$\\ln(x)$",
+      "C": "$x$",
+      "D": "$\\frac{\\ln(x)}{x}$"
+    },
     "correct": "A",
     "difficulty": "medium"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = 2x^3 - 4x + 7$?",
-    "options": { "A": "$6x^2 - 4$", "B": "$6x^2 - 4x$", "C": "$2x^2 - 4$", "D": "$6x^2 - 4x + 7$" },
-    "correct": "A",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Usando la regla del producto, ¿cuál es la derivada de $f(x) = x^2 \\sin(x)$?",
-    "options": { "A": "$2x\\sin(x) + x^2\\cos(x)$", "B": "$2x\\cos(x) + x^2\\sin(x)$", "C": "$x^2\\cos(x)$", "D": "$2x\\sin(x)$" },
-    "correct": "A",
+    "question": "¿Cuál es la derivada de $f(x) = (2x + 1)^3$?",
+    "options": {
+      "A": "$3(2x + 1)^2$",
+      "B": "$6(2x + 1)^2$",
+      "C": "$3(2x + 1)^3$",
+      "D": "$6(2x + 1)^3$"
+    },
+    "correct": "B",
     "difficulty": "medium"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\tan(x)$?",
-    "options": { "A": "$\\sec(x)$", "B": "$\\sec^2(x)$", "C": "$\\cot(x)$", "D": "$\\csc^2(x)$" },
-    "correct": "B",
-    "difficulty": "medium"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x}$?",
-    "options": { "A": "$\\frac{1}{2\\sqrt{x}}$", "B": "$\\frac{1}{\\sqrt{x}}$", "C": "$2\\sqrt{x}$", "D": "$\\frac{\\sqrt{x}}{2}$" },
+    "options": {
+      "A": "$\\sec^2(x)$",
+      "B": "$\\cot(x)$",
+      "C": "$\\sin(x)\\cos(x)$",
+      "D": "$\\frac{1}{\\cos^2(x)}$"
+    },
     "correct": "A",
     "difficulty": "medium"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = 5e^x + 3\\ln(x)$?",
-    "options": { "A": "$5e^x + 3x$", "B": "$5e^x + \\frac{3}{x}$", "C": "$5xe^{x-1} + \\frac{3}{x}$", "D": "$5e^x + 3$" },
+    "question": "¿Cuál es la derivada de $f(x) = x^2 \\sin(x)$?",
+    "options": {
+      "A": "$2x \\sin(x) + x^2 \\cos(x)$",
+      "B": "$2x \\cos(x)$",
+      "C": "$x^2 \\cos(x)$",
+      "D": "$2x \\sin(x)$"
+    },
+    "correct": "A",
+    "difficulty": "medium"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{\\sin(x)}{x}$?",
+    "options": {
+      "A": "$\\frac{\\cos(x)}{x}$",
+      "B": "$\\frac{x\\cos(x) - \\sin(x)}{x^2}$",
+      "C": "$\\frac{\\cos(x) - \\sin(x)}{x}$",
+      "D": "$\\frac{\\sin(x) - x\\cos(x)}{x^2}$"
+    },
     "correct": "B",
     "difficulty": "medium"
   },
   {
-    "question": "Usando la regla de la cadena, ¿cuál es la derivada de $f(x) = (3x + 1)^2$?",
-    "options": { "A": "$6(3x + 1)$", "B": "$2(3x + 1)$", "C": "$6x + 2$", "D": "$9x^2 + 6x + 1$" },
+    "question": "¿Cuál es la derivada de $f(x) = e^{2x}$?",
+    "options": {
+      "A": "$e^{2x}$",
+      "B": "$2e^{2x}$",
+      "C": "$2xe^{2x}$",
+      "D": "$e^{2x+1}$"
+    },
+    "correct": "B",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Si $x^2 + y^2 = 25$, ¿cuál es $\\frac{dy}{dx}$?",
+    "options": {
+      "A": "$-\\frac{x}{y}$",
+      "B": "$-\\frac{y}{x}$",
+      "C": "$\\frac{x}{y}$",
+      "D": "$\\frac{y}{x}$"
+    },
     "correct": "A",
     "difficulty": "hard"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = \\sin(2x)$?",
-    "options": { "A": "$\\cos(2x)$", "B": "$2\\cos(2x)$", "C": "$2\\sin(2x)$", "D": "$-2\\cos(2x)$" },
+    "question": "¿Cuál es la derivada de $f(x) = \\sin(x^2)$?",
+    "options": {
+      "A": "$\\cos(x^2)$",
+      "B": "$2x\\cos(x^2)$",
+      "C": "$2x\\sin(x^2)$",
+      "D": "$x^2\\cos(x^2)$"
+    },
     "correct": "B",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Usando la regla del cociente, ¿cuál es la derivada de $f(x) = \\frac{x}{x+1}$?",
-    "options": { "A": "$\\frac{1}{x+1}$", "B": "$\\frac{1}{(x+1)^2}$", "C": "$\\frac{x}{(x+1)^2}$", "D": "$\\frac{-1}{(x+1)^2}$" },
-    "correct": "B",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = e^{x^2}$?",
-    "options": { "A": "$e^{x^2}$", "B": "$x^2e^{x^2}$", "C": "$2xe^{x^2}$", "D": "$2xe^{2x}$" },
-    "correct": "C",
     "difficulty": "hard"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\ln(x^2 + 1)$?",
-    "options": { "A": "$\\frac{1}{x^2 + 1}$", "B": "$\\frac{2x}{x^2 + 1}$", "C": "$\\frac{x}{x^2 + 1}$", "D": "$\\frac{2}{x^2 + 1}$" },
+    "options": {
+      "A": "$\\frac{1}{x^2 + 1}$",
+      "B": "$\\frac{2x}{x^2 + 1}$",
+      "C": "$\\frac{2x}{(x^2 + 1)^2}$",
+      "D": "$\\frac{x}{x^2 + 1}$"
+    },
     "correct": "B",
     "difficulty": "hard"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = x^x$ (para $x > 0$)?",
-    "options": { "A": "$x^x$", "B": "$x^{x-1}$", "C": "$x^x(\\ln(x) + 1)$", "D": "$x^x\\ln(x)$" },
-    "correct": "C",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\cos(x^2)$?",
-    "options": { "A": "$-\\sin(x^2)$", "B": "$-2x\\sin(x^2)$", "C": "$2x\\cos(x^2)$", "D": "$-2x\\cos(x^2)$" },
+    "options": {
+      "A": "$x^{x-1}$",
+      "B": "$x^x(\\ln(x) + 1)$",
+      "C": "$x^x\\ln(x)$",
+      "D": "$xx^{x-1}$"
+    },
     "correct": "B",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Usando la regla del producto, ¿cuál es la derivada de $f(x) = xe^x\\sin(x)$?",
-    "options": { "A": "$e^x\\sin(x) + xe^x\\cos(x) + xe^x\\sin(x)$", "B": "$e^x\\sin(x) + xe^x\\sin(x) + xe^x\\cos(x)$", "C": "$xe^x\\cos(x) + e^x\\sin(x)$", "D": "$e^x\\sin(x) + xe^x(\\sin(x) + \\cos(x))$" },
-    "correct": "D",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\frac{\\sin(x)}{x}$?",
-    "options": { "A": "$\\frac{\\cos(x)}{x}$", "B": "$\\frac{x\\cos(x) - \\sin(x)}{x^2}$", "C": "$\\frac{\\cos(x) - \\sin(x)}{x}$", "D": "$\\frac{\\sin(x) - x\\cos(x)}{x^2}$" },
-    "correct": "B",
-    "difficulty": "hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x^2 + 4}$?",
-    "options": { "A": "$\\frac{x}{\\sqrt{x^2 + 4}}$", "B": "$\\frac{2x}{\\sqrt{x^2 + 4}}$", "C": "$\\frac{1}{2\\sqrt{x^2 + 4}}$", "D": "$\\frac{x^2}{\\sqrt{x^2 + 4}}$" },
-    "correct": "A",
     "difficulty": "hard"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\arcsin(x)$?",
-    "options": { "A": "$\\frac{1}{\\sqrt{1-x^2}}$", "B": "$\\frac{-1}{\\sqrt{1-x^2}}$", "C": "$\\frac{1}{1-x^2}$", "D": "$\\frac{x}{\\sqrt{1-x^2}}$" },
+    "options": {
+      "A": "$\\frac{1}{\\sqrt{1-x^2}}$",
+      "B": "$\\frac{1}{1+x^2}$",
+      "C": "$\\frac{-1}{\\sqrt{1-x^2}}$",
+      "D": "$\\sqrt{1-x^2}$"
+    },
     "correct": "A",
     "difficulty": "hard"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = e^{\\sin(x)}$?",
-    "options": { "A": "$e^{\\sin(x)}$", "B": "$\\cos(x)e^{\\sin(x)}$", "C": "$\\sin(x)e^{\\sin(x)}$", "D": "$e^{\\cos(x)}$" },
+    "options": {
+      "A": "$e^{\\sin(x)}$",
+      "B": "$\\cos(x)e^{\\sin(x)}$",
+      "C": "$\\sin(x)e^{\\sin(x)}$",
+      "D": "$e^{\\cos(x)}$"
+    },
     "correct": "B",
     "difficulty": "hard"
   },
   {
-    "question": "Si $x^2 + y^2 = 25$, ¿cuál es $\\frac{dy}{dx}$?",
-    "options": { "A": "$\\frac{x}{y}$", "B": "$-\\frac{x}{y}$", "C": "$\\frac{y}{x}$", "D": "$-\\frac{y}{x}$" },
-    "correct": "B",
-    "difficulty": "very-hard"
+    "question": "Si $xy + \\sin(y) = x$, ¿cuál es $\\frac{dy}{dx}$?",
+    "options": {
+      "A": "$\\frac{1-y}{x + \\cos(y)}$",
+      "B": "$\\frac{1+y}{x - \\cos(y)}$",
+      "C": "$\\frac{x-1}{y + \\cos(y)}$",
+      "D": "$\\frac{y-1}{x + \\cos(y)}$"
+    },
+    "correct": "A",
+    "difficulty": "hard"
   },
   {
-    "question": "¿Cuál es la segunda derivada de $f(x) = x^4 - 6x^2 + 3$?",
-    "options": { "A": "$12x^2 - 12$", "B": "$4x^3 - 12x$", "C": "$12x - 12$", "D": "$24x$" },
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{e^x}{x^2}$?",
+    "options": {
+      "A": "$\\frac{e^x(x-2)}{x^3}$",
+      "B": "$\\frac{e^x(x+2)}{x^3}$",
+      "C": "$\\frac{e^x}{2x}$",
+      "D": "$\\frac{e^x(2-x)}{x^3}$"
+    },
     "correct": "A",
-    "difficulty": "very-hard"
+    "difficulty": "hard"
   },
   {
-    "question": "Si $xy + y^2 = 6$, ¿cuál es $\\frac{dy}{dx}$?",
-    "options": { "A": "$\\frac{-y}{x + 2y}$", "B": "$\\frac{y}{x + 2y}$", "C": "$\\frac{-x}{x + 2y}$", "D": "$\\frac{x}{x + 2y}$" },
+    "question": "¿Cuál es la derivada de $f(x) = \\sqrt{x^2 + 4}$?",
+    "options": {
+      "A": "$\\frac{x}{\\sqrt{x^2 + 4}}$",
+      "B": "$\\frac{2x}{\\sqrt{x^2 + 4}}$",
+      "C": "$\\frac{1}{\\sqrt{x^2 + 4}}$",
+      "D": "$\\frac{x}{2\\sqrt{x^2 + 4}}$"
+    },
     "correct": "A",
-    "difficulty": "very-hard"
+    "difficulty": "hard"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = \\ln(\\sin(x))$?",
-    "options": { "A": "$\\frac{1}{\\sin(x)}$", "B": "$\\cot(x)$", "C": "$\\tan(x)$", "D": "$\\frac{\\cos(x)}{\\sin(x)}$" },
+    "options": {
+      "A": "$\\frac{1}{\\sin(x)}$",
+      "B": "$\\cot(x)$",
+      "C": "$\\frac{\\cos(x)}{\\sin(x)}$",
+      "D": "$\\tan(x)$"
+    },
+    "correct": "B",
+    "difficulty": "hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = (\\sin(x))^{\\cos(x)}$ (para $\\sin(x) > 0$)?",
+    "options": {
+      "A": "$(\\sin(x))^{\\cos(x)}[\\cos(x)\\cot(x) - \\sin(x)\\ln(\\sin(x))]$",
+      "B": "$(\\sin(x))^{\\cos(x)}\\cos(x)\\cot(x)$",
+      "C": "$(\\sin(x))^{\\cos(x)}\\sin(x)\\ln(\\sin(x))$",
+      "D": "$\\cos(x)(\\sin(x))^{\\cos(x)-1}$"
+    },
+    "correct": "A",
+    "difficulty": "hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\arctan(\\frac{x}{2})$?",
+    "options": {
+      "A": "$\\frac{1}{2(1+\\frac{x^2}{4})}$",
+      "B": "$\\frac{2}{4+x^2}$",
+      "C": "$\\frac{1}{4+x^2}$",
+      "D": "$\\frac{2}{1+x^2}$"
+    },
+    "correct": "B",
+    "difficulty": "hard"
+  },
+  {
+    "question": "¿Cuál es la segunda derivada de $f(x) = e^{x^2}$?",
+    "options": {
+      "A": "$2xe^{x^2}$",
+      "B": "$2e^{x^2} + 4x^2e^{x^2}$",
+      "C": "$4x^2e^{x^2}$",
+      "D": "$2e^{x^2}(1 + 2x^2)$"
+    },
+    "correct": "D",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "Si $f(x) = \\int_0^{x^2} \\sin(t) dt$, ¿cuál es $f'(x)$?",
+    "options": {
+      "A": "$\\sin(x^2)$",
+      "B": "$2x\\sin(x^2)$",
+      "C": "$\\cos(x^2)$",
+      "D": "$2x\\cos(x^2)$"
+    },
     "correct": "B",
     "difficulty": "very-hard"
   },
   {
     "question": "¿Cuál es la derivada de $f(x) = x^{\\sin(x)}$ (para $x > 0$)?",
-    "options": { "A": "$x^{\\sin(x)}(\\cos(x)\\ln(x) + \\frac{\\sin(x)}{x})$", "B": "$x^{\\sin(x)}\\cos(x)\\ln(x)$", "C": "$\\sin(x)x^{\\sin(x)-1}$", "D": "$x^{\\sin(x)}\\sin(x)\\ln(x)$" },
+    "options": {
+      "A": "$x^{\\sin(x)}[\\frac{\\sin(x)}{x} + \\cos(x)\\ln(x)]$",
+      "B": "$\\sin(x)x^{\\sin(x)-1}$",
+      "C": "$x^{\\sin(x)}\\cos(x)\\ln(x)$",
+      "D": "$x^{\\sin(x)}\\sin(x)$"
+    },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = \\frac{e^x}{x^2 + 1}$?",
-    "options": { "A": "$\\frac{e^x(x^2 + 1) - 2xe^x}{(x^2 + 1)^2}$", "B": "$\\frac{e^x(x^2 - 2x + 1)}{(x^2 + 1)^2}$", "C": "$\\frac{e^x}{x^2 + 1}$", "D": "$\\frac{e^x(x^2 + 1 - 2x)}{(x^2 + 1)^2}$" },
-    "correct": "B",
+    "question": "Si $y = \\arcsin(\\frac{x}{a})$, ¿cuál es $\\frac{d^2y}{dx^2}$?",
+    "options": {
+      "A": "$\\frac{-x}{a^2(a^2-x^2)^{3/2}}$",
+      "B": "$\\frac{x}{a(a^2-x^2)^{3/2}}$",
+      "C": "$\\frac{-1}{a(a^2-x^2)^{3/2}}$",
+      "D": "$\\frac{-x}{a(a^2-x^2)^{3/2}}$"
+    },
+    "correct": "D",
     "difficulty": "very-hard"
   },
   {
-    "question": "Si $\\sin(xy) = x + y$, ¿cuál es $\\frac{dy}{dx}$?",
-    "options": { "A": "$\\frac{1 - y\\cos(xy)}{x\\cos(xy) - 1}$", "B": "$\\frac{1 + y\\cos(xy)}{x\\cos(xy) + 1}$", "C": "$\\frac{y\\cos(xy) - 1}{1 - x\\cos(xy)}$", "D": "$\\frac{1 - \\cos(xy)}{\\cos(xy) - 1}$" },
+    "question": "Un objeto se mueve según la ecuación $s(t) = 2t^3 - 9t^2 + 12t$. ¿Cuál es su aceleración en $t = 2$?",
+    "options": {
+      "A": "$6$ m/s²",
+      "B": "$-6$ m/s²",
+      "C": "$12$ m/s²",
+      "D": "$0$ m/s²"
+    },
     "correct": "A",
     "difficulty": "very-hard"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = \\arctan(\\sqrt{x})$?",
-    "options": { "A": "$\\frac{1}{2\\sqrt{x}(1 + x)}$", "B": "$\\frac{1}{2\\sqrt{x}(1 + \\sqrt{x})}$", "C": "$\\frac{1}{\\sqrt{x}(1 + x)}$", "D": "$\\frac{1}{2(1 + x)\\sqrt{x}}$" },
-    "correct": "A",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Cuál es la tercera derivada de $f(x) = e^{x^2}$?",
-    "options": { "A": "$e^{x^2}(8x^3 + 12x)$", "B": "$e^{x^2}(4x^3 + 6x)$", "C": "$e^{x^2}(8x^3 + 6x)$", "D": "$e^{x^2}(4x^3 + 12x)$" },
-    "correct": "A",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\ln(x + \\sqrt{x^2 + 1})$?",
-    "options": { "A": "$\\frac{1}{\\sqrt{x^2 + 1}}$", "B": "$\\frac{x}{\\sqrt{x^2 + 1}}$", "C": "$\\frac{1}{x + \\sqrt{x^2 + 1}}$", "D": "$\\frac{\\sqrt{x^2 + 1}}{x^2 + 1}$" },
-    "correct": "A",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\int_0^x e^{t^2} dt$?",
-    "options": { "A": "$e^{x^2}$", "B": "$\\int_0^x 2te^{t^2} dt$", "C": "$xe^{x^2}$", "D": "$2xe^{x^2}$" },
-    "correct": "A",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\sinh(x)$ (seno hiperbólico)?",
-    "options": { "A": "$\\sinh(x)$", "B": "$\\cosh(x)$", "C": "$-\\cosh(x)$", "D": "$\\tanh(x)$" },
-    "correct": "B",
-    "difficulty": "very-hard"
-  },
-  {
-    "question": "Para una función paramétrica donde $x = t^3$ y $y = t^2$, ¿cuál es $\\frac{dy}{dx}$?",
-    "options": { "A": "$\\frac{2t}{3t^2}$", "B": "$\\frac{2}{3t}$", "C": "$\\frac{3t^2}{2t}$", "D": "$\\frac{3t}{2}$" },
-    "correct": "B",
-    "difficulty": "expert"
-  },
-  {
-    "question": "¿Cuál es la $n$-ésima derivada de $f(x) = e^{ax}$ donde $a$ es constante?",
-    "options": { "A": "$a^ne^{ax}$", "B": "$na^{n-1}e^{ax}$", "C": "$e^{nax}$", "D": "$\\frac{e^{ax}}{a^n}$" },
-    "correct": "A",
-    "difficulty": "expert"
-  },
-  {
-    "question": "Si $f$ es derivable en $a$ y $g(x) = [f(x)]^2$, entonces $g'(a) = $?",
-    "options": { "A": "$[f'(a)]^2$", "B": "$2f(a)f'(a)$", "C": "$2f'(a)$", "D": "$f(a)f'(a)$" },
-    "correct": "B",
-    "difficulty": "expert"
-  },
-  {
-    "question": "¿Cuál es la derivada de $f(x) = \\int_{x^2}^{x^3} \\sin(t) dt$?",
-    "options": { "A": "$3x^2\\sin(x^3) - 2x\\sin(x^2)$", "B": "$\\sin(x^3) - \\sin(x^2)$", "C": "$x^2\\sin(x^3) - x\\sin(x^2)$", "D": "$3\\sin(x^3) - 2\\sin(x^2)$" },
-    "correct": "A",
-    "difficulty": "expert"
-  },
-  {
-    "question": "Para la función $f(x) = |x|$, ¿cuál de las siguientes afirmaciones es correcta?",
-    "options": { "A": "$f'(0) = 0$", "B": "$f'(0) = 1$", "C": "$f'(0)$ no existe", "D": "$f'(0) = -1$" },
+    "question": "Si $f(x) = e^{g(x)}$ y $g'(x) = \\frac{1}{x}$, ¿cuál es $f''(x)$?",
+    "options": {
+      "A": "$e^{g(x)}(\\frac{1}{x^2} - \\frac{1}{x^2})$",
+      "B": "$e^{g(x)}(\\frac{1}{x^2} + \\frac{1}{x^2})$",
+      "C": "$e^{g(x)}(-\\frac{1}{x^2})$",
+      "D": "$e^{g(x)}(\\frac{1}{x^2} - \\frac{1}{x^2}) = 0$"
+    },
     "correct": "C",
-    "difficulty": "expert"
+    "difficulty": "very-hard"
   },
   {
-    "question": "¿Cuál es la derivada direccional de $f(x,y) = x^2y + xy^2$ en el punto $(1,1)$ en la dirección del vector $\\vec{v} = (3,4)$?",
-    "options": { "A": "$\\frac{22}{5}$", "B": "$\\frac{20}{5}$", "C": "$\\frac{18}{5}$", "D": "$\\frac{24}{5}$" },
+    "question": "Para la función $f(x) = \\frac{\\ln(x)}{x}$, ¿en qué valor de $x$ se encuentra el máximo local?",
+    "options": {
+      "A": "$x = 1$",
+      "B": "$x = e$",
+      "C": "$x = \\frac{1}{e}$",
+      "D": "$x = 2$"
+    },
+    "correct": "B",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "Si $f(x) = \\sqrt{1 + x^2}$, ¿cuál es $f'(0)$?",
+    "options": {
+      "A": "$1$",
+      "B": "$0$",
+      "C": "$\\frac{1}{2}$",
+      "D": "No existe"
+    },
+    "correct": "B",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\ln(x^2 + 2x + 5)$?",
+    "options": {
+      "A": "$\\frac{2x + 2}{x^2 + 2x + 5}$",
+      "B": "$\\frac{1}{x^2 + 2x + 5}$",
+      "C": "$\\frac{2x}{x^2 + 2x + 5}$",
+      "D": "$\\frac{x + 1}{x^2 + 2x + 5}$"
+    },
+    "correct": "A",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\int_x^{x^2} \\frac{\\sin(t)}{t} dt$?",
+    "options": {
+      "A": "$\\frac{\\sin(x^2)}{x^2} \\cdot 2x - \\frac{\\sin(x)}{x}$",
+      "B": "$\\frac{\\sin(x^2)}{x^2} + \\frac{\\sin(x)}{x}$",
+      "C": "$2x\\frac{\\sin(x^2)}{x^2} - \\frac{\\sin(x)}{x}$",
+      "D": "$\\frac{\\sin(x^2)}{x^2} - \\frac{\\sin(x)}{x}$"
+    },
+    "correct": "C",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "Un globo esférico se infla de manera que su radio aumenta a razón de 2 cm/s. ¿A qué velocidad aumenta el volumen cuando el radio es 6 cm?",
+    "options": {
+      "A": "$288\\pi$ cm³/s",
+      "B": "$144\\pi$ cm³/s",
+      "C": "$72\\pi$ cm³/s",
+      "D": "$432\\pi$ cm³/s"
+    },
+    "correct": "A",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la tercera derivada de $f(x) = \\frac{1}{1-x}$?",
+    "options": {
+      "A": "$\\frac{6}{(1-x)^4}$",
+      "B": "$\\frac{3!}{(1-x)^4}$",
+      "C": "$\\frac{2}{(1-x)^3}$",
+      "D": "$\\frac{6}{(1-x)^3}$"
+    },
+    "correct": "A",
+    "difficulty": "very-hard"
+  },
+  {
+    "question": "¿Cuál es la ecuación de la recta tangente a $f(x) = x^3 - 3x + 1$ en el punto $(2, 3)$?",
+    "options": {
+      "A": "$y = 9x - 15$",
+      "B": "$y = 9x - 18$",
+      "C": "$y = 9x - 21$",
+      "D": "$y = 3x - 3$"
+    },
     "correct": "A",
     "difficulty": "expert"
   },
   {
-    "question": "Si $f(x) = x^x$ para $x > 0$, ¿cuál es $f''(1)$?",
-    "options": { "A": "$1$", "B": "$2$", "C": "$3$", "D": "$4$" },
+    "question": "Si $f(x) = x^4 - 4x^3 + 6x^2 - 4x + 1$, ¿cuántos puntos de inflexión tiene la función?",
+    "options": {
+      "A": "$0$",
+      "B": "$1$",
+      "C": "$2$",
+      "D": "$3$"
+    },
     "correct": "B",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cuál es la derivada de $f(x) = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$?",
-    "options": { "A": "$\\sum_{n=1}^{\\infty} \\frac{x^{n-1}}{(n-1)!}$", "B": "$\\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$", "C": "$\\sum_{n=1}^{\\infty} \\frac{nx^{n-1}}{n!}$", "D": "$e^x$" },
-    "correct": "B",
-    "difficulty": "expert"
-  },
-  {
-    "question": "Para funciones inversas, si $f$ y $g$ son inversas y ambas derivables, entonces $(f^{-1})'(a) = $?",
-    "options": { "A": "$\\frac{1}{f'(f^{-1}(a))}$", "B": "$f'(a)$", "C": "$\\frac{1}{f'(a)}$", "D": "$[f'(f^{-1}(a))]^{-1}$" },
+    "question": "Para la función $f(x) = xe^{-x^2}$, ¿cuál es el valor máximo absoluto?",
+    "options": {
+      "A": "$\\frac{1}{\\sqrt{2e}}$",
+      "B": "$\\frac{1}{2\\sqrt{e}}$",
+      "C": "$\\frac{1}{\\sqrt{e}}$",
+      "D": "$\\frac{1}{2e}$"
+    },
     "correct": "A",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cuál es la fórmula de Leibniz para la $n$-ésima derivada de un producto $f(x)g(x)$?",
-    "options": { "A": "$\\sum_{k=0}^{n} f^{(k)}(x)g^{(n-k)}(x)$", "B": "$\\sum_{k=0}^{n} \\binom{n}{k} f^{(k)}(x)g^{(n-k)}(x)$", "C": "$f^{(n)}(x)g(x) + f(x)g^{(n)}(x)$", "D": "$n!\\sum_{k=0}^{n} f^{(k)}(x)g^{(n-k)}(x)$" },
-    "correct": "B",
-    "difficulty": "expert"
-  },
-  {
-    "question": "Si $f(x) = \\begin{cases} x^2\\sin(\\frac{1}{x}) & \\text{si } x \\neq 0 \\\\ 0 & \\text{si } x = 0 \\end{cases}$, entonces $f'(0) = $?",
-    "options": { "A": "$0$", "B": "$1$", "C": "No existe", "D": "$\\sin(\\frac{1}{0})$" },
+    "question": "Si $y = f(g(h(x)))$ donde $f'(u) = u^2$, $g'(v) = 2v$, $h'(x) = 3$, y $h(1) = 2$, $g(2) = 4$, ¿cuál es $\\frac{dy}{dx}$ en $x = 1$?",
+    "options": {
+      "A": "$192$",
+      "B": "$96$",
+      "C": "$384$",
+      "D": "$144$"
+    },
     "correct": "A",
     "difficulty": "expert"
   },
   {
-    "question": "¿Cuál es el valor de $\\lim_{h \\to 0} \\frac{f(x+h) - f(x-h)}{2h}$ para una función derivable $f$?",
-    "options": { "A": "$f'(x)$", "B": "$2f'(x)$", "C": "$\\frac{f'(x)}{2}$", "D": "$f''(x)$" },
+    "question": "¿Cuál es la derivada de $f(x) = \\int_0^x \\frac{e^{t^2}}{t^2 + 1} dt$ usando el teorema fundamental del cálculo?",
+    "options": {
+      "A": "$\\frac{e^{x^2}}{x^2 + 1}$",
+      "B": "$e^{x^2}$",
+      "C": "$\\frac{1}{x^2 + 1}$",
+      "D": "$\\frac{2xe^{x^2}}{x^2 + 1}$"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\frac{\\ln(x)}{x^2}$?",
+    "options": {
+      "A": "$\\frac{1 - 2\\ln(x)}{x^3}$",
+      "B": "$\\frac{2\\ln(x) - 1}{x^3}$",
+      "C": "$\\frac{1}{x^3}$",
+      "D": "$\\frac{-\\ln(x)}{x^3}$"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "Una ventana tiene forma de rectángulo coronado por un semicírculo. Si el perímetro es 20 m, ¿cuáles son las dimensiones que maximizan el área? (Sea $x$ el ancho del rectángulo)",
+    "options": {
+      "A": "$x = \\frac{40}{4 + \\pi}$",
+      "B": "$x = \\frac{20}{4 + \\pi}$",
+      "C": "$x = \\frac{40}{2 + \\pi}$",
+      "D": "$x = \\frac{20}{2 + \\pi}$"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "Para la función implícita $x^3 + y^3 = 3xy$, ¿cuál es la pendiente de la tangente en el punto $(\\frac{3}{2}, \\frac{3}{2})$?",
+    "options": {
+      "A": "$-1$",
+      "B": "$1$",
+      "C": "$0$",
+      "D": "Indefinida"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\cos^3(x)$?",
+    "options": {
+      "A": "$-3\\cos^2(x)\\sin(x)$",
+      "B": "$3\\cos^2(x)\\sin(x)$",
+      "C": "$-3\\cos^2(x)$",
+      "D": "$3\\sin^2(x)\\cos(x)$"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = \\sin^2(3x)$?",
+    "options": {
+      "A": "$6\\sin(3x)\\cos(3x)$",
+      "B": "$2\\sin(3x)\\cos(3x)$",
+      "C": "$3\\sin(6x)$",
+      "D": "$6\\sin(6x)$"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "¿Cuál es la derivada de $f(x) = e^{2x}\\sin(x)$?",
+    "options": {
+      "A": "$e^{2x}(2\\sin(x) + \\cos(x))$",
+      "B": "$2e^{2x}\\sin(x) + e^{2x}\\cos(x)$",
+      "C": "$e^{2x}(\\sin(x) + \\cos(x))$",
+      "D": "$2e^{2x}\\cos(x)$"
+    },
+    "correct": "A",
+    "difficulty": "expert"
+  },
+  {
+    "question": "Si $h(x) = f(g(x))$ donde $f$ y $g$ son funciones diferenciables, y se sabe que $h'(2) = 6$, $f'(g(2)) = 3$, ¿cuál es $g'(2)$?",
+    "options": {
+      "A": "$2$",
+      "B": "$3$",
+      "C": "$6$",
+      "D": "$18$"
+    },
     "correct": "A",
     "difficulty": "expert"
   }
