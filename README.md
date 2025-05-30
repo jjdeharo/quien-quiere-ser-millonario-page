@@ -131,36 +131,7 @@ Aquí tienes un ejemplo del formato que espero:
 Por favor, comienza a generar el banco de preguntas en formato JSON válido.
 ```
 
----
 
-## 🚦 Instalación y Uso
-
-1. **Descarga o clona** este repositorio
-2. **Personaliza** el archivo `questions.json` con tus preguntas
-3. **Abre** `index.html` en tu navegador web
-4. **¡Disfruta jugando!**
-
-### Requisitos
-
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Servidor web local (opcional, pero recomendado para evitar problemas con CORS)
-
-### Servir localmente
-
-Si encuentras problemas cargando el archivo JSON, puedes usar un servidor local simple:
-
-```bash
-# Con Python 3
-python -m http.server 8000
-
-# Con Node.js (si tienes http-server instalado)
-npx http-server
-
-# Con PHP
-php -S localhost:8000
-```
-
-Luego abre `http://localhost:8000` en tu navegador.
 
 ---
 
@@ -172,10 +143,7 @@ Luego abre `http://localhost:8000` en tu navegador.
 - **Comprueba** que el JSON sea válido usando un validador online
 - **Usa** un servidor web local en lugar de abrir el archivo directamente
 
-### Error de CORS
 
-- **Causa**: Los navegadores bloquean la carga de archivos locales por seguridad
-- **Solución**: Usa un servidor web local (ver sección anterior)
 
 ### Preguntas mal formateadas
 
