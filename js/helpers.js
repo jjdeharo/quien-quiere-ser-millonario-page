@@ -78,13 +78,3 @@ export function hideMessageBox() {
     const overlay = document.getElementById('messageBoxOverlay');
     overlay.classList.remove('show');
 }
-
-/**
- * Versión especializada para mostrar mensajes con LaTeX garantizado
- * @param {string} title - Título de la caja
- * @param {string} content - Contenido con fórmulas LaTeX
- * @param {Array} buttons - Botones del mensaje
- */
-export function showMessageBoxWithMath(title, content, buttons) {
-    return showMessageBox(title, content, buttons, true);
-}
